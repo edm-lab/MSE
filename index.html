@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Materials Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        nav {
+            background: #333;
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 15px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+        .banner {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+        }
+        .content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #e68900;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#faculty">Faculty</a></li>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#students">Students</a></li>
+                <li><a href="#admissions">Admissions</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="banner" style="background-image: url('images/background1.jpg');">
+            <div class="content">
+                <h2>Innovative Research</h2>
+                <p>Advancing the frontiers of materials science.</p>
+                <a href="#research" class="btn">View More</a>
+            </div>
+        </section>
+        
+        <section class="banner" style="background-image: url('images/background2.jpg');">
+            <div class="content">
+                <h2>Exceptional Faculty</h2>
+                <p>Meet our world-class professors and researchers.</p>
+                <a href="#faculty" class="btn">View More</a>
+            </div>
+        </section>
+        
+        <section class="banner" style="background-image: url('images/background3.jpg');">
+            <div class="content">
+                <h2>Cutting-Edge Education</h2>
+                <p>Explore our programs and courses designed for the future.</p>
+                <a href="#courses" class="btn">View More</a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Department of Materials Science. All rights reserved.</p>
+    </footer>
+</body>
+</html>
