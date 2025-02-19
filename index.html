@@ -37,6 +37,9 @@
             background: #555;
             border-radius: 5px;
         }
+        .body-content {
+            padding-top: 140px;
+        }
         .banner {
             position: relative;
             background-size: cover;
@@ -72,10 +75,45 @@
             padding: 10px;
             margin-top: 20px;
         }
+        .menu-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            z-index: 1000;
+        }
+        .notice-bar {
+            top: 0px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            position: relative;
+            overflow: hidden;
+            height: 30px;
+            z-index: 1200;
+        }
+        .notice-text {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .active{
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <header>
+        <div class="menu-bar">
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
@@ -87,13 +125,17 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
+        
+        <div class="notice-bar">
+            <div class="notice-text active">공지사항 1: 안녕하세요.</div>
+            <div class="notice-text">공지사항 2: 감사합니다.</div>
+            <div class="notice-text">공지사항 3: 어서오세요.</div>
+        </div>
+        </div>
     </header>
-    <ul class="rbRG14 bar flexWrapper alignC JCmid fff BG12 ">
-        <li>All orders over $79 will enjoy free standard shipping to the US</li>
-        <li>Join us and receive your benefits</li>
-    </ul>
     <main>
-        <section class="banner" style="background-image: url('images/background1.png');">
+    <div class="body-content">
+        <section class="banner" style="background-image: url('images/background2.png');">
             <div class="content">
                 <h2>Innovative Research</h2>
                 <p>Advancing the frontiers of materials science.</p>
@@ -101,7 +143,7 @@
             </div>
         </section>
         
-        <section class="banner" style="background-image: url('images/background2.png');">
+        <section class="banner" style="background-image: url('images/background1.png');">
             <div class="content">
                 <h2>Exceptional Faculty</h2>
                 <p>Meet our world-class professors and researchers.</p>
@@ -116,10 +158,27 @@
                 <a href="#courses" class="btn">View More</a>
             </div>
         </section>
+    </div>
     </main>
     
     <footer>
         <p>&copy; 2025 Department of Materials Science. All rights reserved.</p>
     </footer>
+
+    <script>
+        const notices = document.querySelectorAll('.notice-text');
+        let index = 0;
+
+        function showNextNotice() {
+            notices[index].classList.remove('active');
+
+            setTimeout(() => {
+            index = (index + 1) % notices.length;
+            notices[index].classList.add('active');
+            }, 1000);
+        }
+
+        setInterval(showNextNotice, 4000);
+    </script>
 </body>
 </html>
