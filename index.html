@@ -16,7 +16,6 @@
         .logo-container {
             display: flex;
             align-items: center;
-            justify-content: center;
             gap: 30px; /* 로고와 학과명 사이 간격 */
         }
         .logo {
@@ -139,7 +138,7 @@
             display: none;
             font-size: 30px;
             cursor: pointer;
-            position: absolute;
+            
             right: 20px;
             top: 10px;
             color: white;
@@ -176,6 +175,11 @@
             }
             .hamburger {
                 display: block; /* 햄버거 버튼 보이기 */
+                font-size: 28px; /* 크기 조정 */
+            }
+            .menu-bar {
+               height: 60px; /* 모바일에서는 더 작게 */
+               padding: 0 15px;
             }
             .mobile-menu {
                 display: none;
@@ -187,6 +191,9 @@
             .logo {
             height: 40px;
             margin-right: 20px;
+            }
+            .logo-container {
+            gap: 10px; /* 로고와 학과명 사이 간격 */
             }
         }
     </style>
