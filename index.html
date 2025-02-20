@@ -12,9 +12,16 @@
             text-align: center;
             background-color: #f4f4f4;
         }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
         .logo {
             height: 40px;
             margin-right: 20px;
+        }
+        .department-name {
+            height: 40px;
         }
         nav {
             background: #333;
@@ -163,6 +170,9 @@
                 display: none;
                 flex-direction: column;
             }
+            .department-name {
+                height: 30px; /* 모바일에서는 학과명 이미지 크기 축소 */
+            }
         }
     </style>
 </head>
@@ -170,10 +180,13 @@
     <header>
         <div class="menu-bar">
             
-            <!-- 학교 로고 -->
-            <a href="index.html">
-                <img src="images/school_logo.png" alt="School Logo" class="logo">
-            </a>
+            <!-- 로고 + 학과명 -->
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/school_logo.png" alt="School Logo" class="logo">
+                </a>
+                <img src="images/department_name.png" alt="Department Name" class="department-name">
+            </div>
 
             <!-- 햄버거 버튼 -->
             <button class="hamburger" onclick="toggleMenu()">☰</button>
