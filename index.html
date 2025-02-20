@@ -44,17 +44,20 @@
             position: relative;
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            min-height: 70vh;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            text-align: center;
+            padding: 20px;
         }
         .content {
             background: rgba(0, 0, 0, 0.6);
             padding: 20px;
             border-radius: 10px;
+            max-width: 80%;
         }
         .btn {
             display: inline-block;
@@ -106,61 +109,83 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
-        .active{
+        .active {
             opacity: 1;
+        }
+        /* 반응형 디자인 */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            nav ul li {
+                display: block;
+                width: 100%;
+                text-align: center;
+            }
+            .banner {
+                min-height: 50vh;
+            }
+            .content {
+                max-width: 90%;
+            }
+            .btn {
+                width: 80%;
+                padding: 12px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="menu-bar">
-        <nav>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#faculty">Faculty</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#students">Students</a></li>
-                <li><a href="#admissions">Admissions</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        
-        <div class="notice-bar">
-            <div class="notice-text active">공지사항 1: 안녕하세요.</div>
-            <div class="notice-text">공지사항 2: 감사합니다.</div>
-            <div class="notice-text">공지사항 3: 어서오세요.</div>
-        </div>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#faculty">Faculty</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#students">Students</a></li>
+                    <li><a href="#admissions">Admissions</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="notice-bar">
+                <div class="notice-text active">공지사항 1: 안녕하세요.</div>
+                <div class="notice-text">공지사항 2: 감사합니다.</div>
+                <div class="notice-text">공지사항 3: 어서오세요.</div>
+            </div>
         </div>
     </header>
     <main>
-    <div class="body-content">
-        <section class="banner" style="background-image: url('images/background2.png');">
-            <div class="content">
-                <h2>Innovative Research</h2>
-                <p>Advancing the frontiers of materials science.</p>
-                <a href="#research" class="btn">View More</a>
-            </div>
-        </section>
-        
-        <section class="banner" style="background-image: url('images/background1.png');">
-            <div class="content">
-                <h2>Exceptional Faculty</h2>
-                <p>Meet our world-class professors and researchers.</p>
-                <a href="#faculty" class="btn">View More</a>
-            </div>
-        </section>
-        
-        <section class="banner" style="background-image: url('images/background3.png');">
-            <div class="content">
-                <h2>Cutting-Edge Education</h2>
-                <p>Explore our programs and courses designed for the future.</p>
-                <a href="#courses" class="btn">View More</a>
-            </div>
-        </section>
-    </div>
+        <div class="body-content">
+            <section class="banner" style="background-image: url('images/background2.png');">
+                <div class="content">
+                    <h2>Innovative Research</h2>
+                    <p>Advancing the frontiers of materials science.</p>
+                    <a href="#research" class="btn">View More</a>
+                </div>
+            </section>
+
+            <section class="banner" style="background-image: url('images/background1.png');">
+                <div class="content">
+                    <h2>Exceptional Faculty</h2>
+                    <p>Meet our world-class professors and researchers.</p>
+                    <a href="#faculty" class="btn">View More</a>
+                </div>
+            </section>
+
+            <section class="banner" style="background-image: url('images/background3.png');">
+                <div class="content">
+                    <h2>Cutting-Edge Education</h2>
+                    <p>Explore our programs and courses designed for the future.</p>
+                    <a href="#courses" class="btn">View More</a>
+                </div>
+            </section>
+        </div>
     </main>
-    
+
     <footer>
         <p>&copy; 2025 Department of Materials Science. All rights reserved.</p>
     </footer>
@@ -173,8 +198,8 @@
             notices[index].classList.remove('active');
 
             setTimeout(() => {
-            index = (index + 1) % notices.length;
-            notices[index].classList.add('active');
+                index = (index + 1) % notices.length;
+                notices[index].classList.add('active');
             }, 1000);
         }
 
