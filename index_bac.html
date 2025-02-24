@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Department of Materials Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 30px; /* 로고와 학과명 사이 간격 */
+        }
+        .logo {
+            height: 100px;
+            margin-right: 20px;
+            padding-left: 80px;
+        }
+        .department-name {
+            height: 100px;
+        }
+        nav {
+            background: #333;
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-right: 80px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px 15px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+        .body-content {
+            padding-top: 120px;
+        }
+        .banner {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            text-align: center;
+            padding: 20px;
+        }
+        .content {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 80%;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #e68900;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .menu-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            z-index: 1000;
+        }
+        .notice-bar {
+            top: 120px;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 20px;
+            position: relative;
+            overflow: hidden;
+            height: 30px;
+            z-index: 900;
+        }
+        .notice-text {
+            position: absolute;
+            width: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .active {
+            opacity: 1;
+        }
+        /* 햄버거 메뉴 스타일 */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            color: white;
+            background: none;
+            border: none;
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #333;
+            width: 100%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            padding: 10px 0;
+        }
+        .mobile-menu li {
+            padding: 10px;
+        }
+        .mobile-menu li a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+        }
+        .mobile-menu li a:hover {
+            background: #555;
+        }
+        /* 반응형 디자인 */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none; /* 기존 메뉴 숨김 */
+            }
+            .hamburger {
+                display: block; /* 햄버거 버튼 보이기 */
+                font-size: 28px; /* 크기 조정 */
+            }
+            .menu-bar {
+               height: 60px; /* 모바일에서는 더 작게 */
+            }
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+            }
+            .department-name {
+                height: 40px; /* 모바일에서는 학과명 이미지 크기 축소 */
+            }
+            .logo {
+            height: 40px;
+            padding-left: 10px;
+            }
+            .logo-container {
+            gap: 10px; /* 로고와 학과명 사이 간격 */
+            }
+            .body-content {
+            padding-top: 60px;
+            }
+            .notice-bar {
+                top: 60px;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-bar">
+            
+            <!-- 로고 + 학과명 -->
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/school_logo.png" alt="School Logo" class="logo">
+                </a>
+                <img src="images/department_name.png" alt="Department Name" class="department-name">
+            </div>
+
+            <!-- 햄버거 버튼 -->
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            
+            <nav>
+                <ul>
+                    <li><a href="about.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="laboratory.html">Laboratory</a></li>
+                    <li><a href="#courses">Professor</a></li>
+                    <li><a href="#students">Students</a></li>
+                    <li><a href="#admissions">Publication</a></li>
+                    <li><a href="#contact">News</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- 모바일 전용 메뉴 -->
+            <ul class="mobile-menu">
+                <li><a href="about.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="laboratory.html">Laboratory</a></li>
+                <li><a href="#courses">Professor</a></li>
+                <li><a href="#students">Students</a></li>
+                <li><a href="#admissions">Publication</a></li>
+                <li><a href="#admissions">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>           
+        </div>
+        <div class="notice-bar">
+            <div class="notice-text active">공지사항 1: 안녕하세요.</div>
+            <div class="notice-text">공지사항 2: 감사합니다.</div>
+            <div class="notice-text">공지사항 3: 어서오세요.</div>
+        </div>
+    </header>
+    <main>
+        <div class="body-content">
+            <section class="banner" style="background-image: url('images/background2.png');">
+                <div class="content">
+                    <h2>Innovative Research</h2>
+                    <p>Advancing the frontiers of materials science.</p>
+                    <a href="#research" class="btn">View More</a>
+                </div>
+            </section>
+
+            <section class="banner" style="background-image: url('images/background1.png');">
+                <div class="content">
+                    <h2>Exceptional Faculty</h2>
+                    <p>Meet our world-class professors and researchers.</p>
+                    <a href="#faculty" class="btn">View More</a>
+                </div>
+            </section>
+
+            <section class="banner" style="background-image: url('images/background3.png');">
+                <div class="content">
+                    <h2>Cutting-Edge Education</h2>
+                    <p>Explore our programs and courses designed for the future.</p>
+                    <a href="#courses" class="btn">View More</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Department of Materials Science. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const notices = document.querySelectorAll('.notice-text');
+        let index = 0;
+
+        function showNextNotice() {
+            notices[index].classList.remove('active');
+
+            setTimeout(() => {
+            index = (index + 1) % notices.length;
+            notices[index].classList.add('active');
+            }, 1000);
+        }
+
+        setInterval(showNextNotice, 4000);
+    </script>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
+</body>
+</html>

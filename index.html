@@ -4,13 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <title>Department of Materials Science</title>
+    <title>About - Department of Materials Science</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            text-align: center;
+            font-family: 'Montserrat', sans-serif;
             background-color: #f4f4f4;
         }
         .logo-container {
@@ -58,25 +57,6 @@
         .body-content {
             padding-top: 120px;
         }
-        .banner {
-            position: relative;
-            background-size: cover;
-            background-position: center;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-            text-align: center;
-            padding: 20px;
-        }
-        .content {
-            background: rgba(0, 0, 0, 0.6);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 80%;
-        }
         .btn {
             display: inline-block;
             background: #ff9800;
@@ -111,24 +91,6 @@
             padding: 0px;
             font-size: 20px;
             z-index: 1000;
-        }
-        .notice-bar {
-            top: 120px;
-            background-color: black;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            font-size: 20px;
-            position: relative;
-            overflow: hidden;
-            height: 30px;
-            z-index: 900;
-        }
-        .notice-text {
-            position: absolute;
-            width: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
         }
         .active {
             opacity: 1;
@@ -168,6 +130,102 @@
         .mobile-menu li a:hover {
             background: #555;
         }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* 슬라이드 섹션 */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .faculty {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .faculty-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .faculty-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .faculty-card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .faculty-card p {
+            font-size: 16px;
+            color: #777;
+        }
+
+        /* 썸네일 */
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .thumbnail {
+            width: 60px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .thumbnail.active {
+            opacity: 1;
+            border: 2px solid #ff9800;
+        }
+
         /* 반응형 디자인 */
         @media screen and (max-width: 768px) {
             nav ul {
@@ -197,81 +255,112 @@
             .body-content {
             padding-top: 60px;
             }
-            .notice-bar {
-                top: 60px;
+            .section {
+                padding: 20px;
+            }
+            .thumbnail {
+                width: 50px;
+                height: 30px;
             }
     </style>
 </head>
 <body>
     <header>
-        <div class="menu-bar">
+    <div class="menu-bar">
             
-            <!-- 로고 + 학과명 -->
-            <div class="logo-container">
-                <a href="index.html">
-                    <img src="images/school_logo.png" alt="School Logo" class="logo">
-                </a>
-                <img src="images/department_name.png" alt="Department Name" class="department-name">
-            </div>
+        <!-- 로고 + 학과명 -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/school_logo.png" alt="School Logo" class="logo">
+            </a>
+            <img src="images/department_name.png" alt="Department Name" class="department-name">
+        </div>
 
-            <!-- 햄버거 버튼 -->
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
-            
-            <nav>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="research.html">Research</a></li>
-                    <li><a href="laboratory.html">Laboratory</a></li>
-                    <li><a href="#courses">Courses</a></li>
-                    <li><a href="#students">Students</a></li>
-                    <li><a href="#admissions">Admissions</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-
-            <!-- 모바일 전용 메뉴 -->
-            <ul class="mobile-menu">
-                <li><a href="about.html">About</a></li>
+        <!-- 햄버거 버튼 -->
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="research.html">Research</a></li>
                 <li><a href="laboratory.html">Laboratory</a></li>
                 <li><a href="#courses">Courses</a></li>
                 <li><a href="#students">Students</a></li>
                 <li><a href="#admissions">Admissions</a></li>
                 <li><a href="#contact">Contact</a></li>
-            </ul>           
-        </div>
-        <div class="notice-bar">
-            <div class="notice-text active">공지사항 1: 안녕하세요.</div>
-            <div class="notice-text">공지사항 2: 감사합니다.</div>
-            <div class="notice-text">공지사항 3: 어서오세요.</div>
-        </div>
+            </ul>
+        </nav>
+
+        <!-- 모바일 전용 메뉴 -->
+        <ul class="mobile-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="research.html">Research</a></li>
+            <li><a href="laboratory.html">Laboratory</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#students">Students</a></li>
+            <li><a href="#admissions">Admissions</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>           
+    </div>
     </header>
-    <main>
+
+    <main class="container">
         <div class="body-content">
-            <section class="banner" style="background-image: url('images/background2.png');">
-                <div class="content">
-                    <h2>Innovative Research</h2>
-                    <p>Advancing the frontiers of materials science.</p>
-                    <a href="#research" class="btn">View More</a>
-                </div>
-            </section>
+        <!-- 학과 개요 -->
+        <section class="section">
+            <h2>Welcome to the Department of Materials Science</h2>
+            <p>Our department is dedicated to advancing research and education in the field of materials science and engineering, focusing on innovative solutions for modern technology.</p>
+        </section>
 
-            <section class="banner" style="background-image: url('images/background1.png');">
-                <div class="content">
-                    <h2>Exceptional Faculty</h2>
-                    <p>Meet our world-class professors and researchers.</p>
-                    <a href="#faculty" class="btn">View More</a>
+        <!-- 이미지 슬라이드 섹션 -->
+        <section class="section">
+            <h2>Our Research & Innovations</h2>
+            <div class="slider-container">
+                <div class="slides">
+                    <div class="slide"><img src="images/slide1.jpg" alt="Slide 1"></div>
+                    <div class="slide"><img src="images/slide2.jpg" alt="Slide 2"></div>
+                    <div class="slide"><img src="images/slide3.jpg" alt="Slide 3"></div>
+                    <div class="slide"><img src="images/slide4.jpg" alt="Slide 4"></div>
+                    <div class="slide"><img src="images/slide5.jpg" alt="Slide 5"></div>
                 </div>
-            </section>
+            </div>
+            <div class="thumbnails">
+                <img src="images/slide1.jpg" class="thumbnail active" onclick="showSlide(0)">
+                <img src="images/slide2.jpg" class="thumbnail" onclick="showSlide(1)">
+                <img src="images/slide3.jpg" class="thumbnail" onclick="showSlide(2)">
+                <img src="images/slide4.jpg" class="thumbnail" onclick="showSlide(3)">
+                <img src="images/slide5.jpg" class="thumbnail" onclick="showSlide(4)">
+            </div>
+        </section>
 
-            <section class="banner" style="background-image: url('images/background3.png');">
-                <div class="content">
-                    <h2>Cutting-Edge Education</h2>
-                    <p>Explore our programs and courses designed for the future.</p>
-                    <a href="#courses" class="btn">View More</a>
+        <!-- 연구 및 교육 -->
+        <section class="section">
+            <h2>Research & Education</h2>
+            <p>We conduct cutting-edge research in materials engineering, including corrosion science, hydrogen energy materials, and advanced metallic systems.</p>
+        </section>
+
+        <!-- 교수진 소개 -->
+        <section class="section">
+            <h2>Our Faculty Members</h2>
+            <div class="faculty">
+                <div class="faculty-card">
+                    <img src="images/professor1.jpg" alt="Professor">
+                    <h3>Dr. John Doe</h3>
+                    <p>Professor of Materials Science</p>
                 </div>
-            </section>
-        </div>
+                <div class="faculty-card">
+                    <img src="images/professor2.jpg" alt="Professor">
+                    <h3>Dr. Jane Smith</h3>
+                    <p>Assistant Professor</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="images/professor3.jpg" alt="Professor">
+                    <h3>Dr. Robert Brown</h3>
+                    <p>Associate Professor</p>
+                </div>
+            </div>
+        </section>
+    </div>
     </main>
 
     <footer>
@@ -279,19 +368,36 @@
     </footer>
 
     <script>
-        const notices = document.querySelectorAll('.notice-text');
-        let index = 0;
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const thumbnails = document.querySelectorAll('.thumbnail');
 
-        function showNextNotice() {
-            notices[index].classList.remove('active');
+        function showSlide(index) {
+            slideIndex = index;
+            const offset = -index * 100;
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
 
-            setTimeout(() => {
-            index = (index + 1) % notices.length;
-            notices[index].classList.add('active');
-            }, 1000);
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
         }
 
-        setInterval(showNextNotice, 4000);
+        function autoSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        let slideInterval = setInterval(autoSlide, 5000);
+
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(index);
+                slideInterval = setInterval(autoSlide, 5000);
+            });
+        });
+
+        showSlide(slideIndex);
     </script>
 
     <script>
