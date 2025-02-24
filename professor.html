@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Professor Profile - Department of Materials Science</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 30px; /* 로고와 학과명 사이 간격 */
+        }
+        .logo {
+            height: 100px;
+            margin-right: 20px;
+            padding-left: 80px;
+        }
+        .department-name {
+            height: 100px;
+        }
+        nav {
+            background: #333;
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-right: 80px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px 15px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+        .body-content {
+            padding-top: 80px;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #e68900;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .menu-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            z-index: 1000;
+        }
+        .active {
+            opacity: 1;
+        }
+        /* 햄버거 메뉴 스타일 */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            color: white;
+            background: none;
+            border: none;
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #333;
+            width: 100%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            padding: 10px 0;
+        }
+        .mobile-menu li {
+            padding: 10px;
+        }
+        .mobile-menu li a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+        }
+        .mobile-menu li a:hover {
+            background: #555;
+        }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        /* 교수 정보 섹션 */
+        .professor-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            
+        }
+ 
+        /* 교수 사진 */
+        .professor-photo {
+            width: 30%; /* 사진 크기를 크게 설정 */
+            height: auto;
+            object-fit: cover;
+            border-radius: 0; /* 사각형 형태 유지 */
+            margin-left: 80px;
+        }
+
+        /* About 텍스트 */
+        .about-text {
+            width: 55%;
+        }
+        .about-text h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .about-text p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* 소개 섹션 */
+        .section {
+            background: white;
+            padding: 40px;
+            margin: 30px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .section h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .section p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* 연구 관심사 */
+        .research-list {
+            list-style: none;
+            padding: 0;
+        }
+        .research-list li {
+            font-size: 18px;
+            color: #444;
+            padding: 10px;
+            background: #f9f9f9;
+            border-left: 5px solid #ff9800;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+
+        /* 논문 리스트 */
+        .publications-list {
+            list-style: none;
+            padding: 0;
+        }
+        .publications-list li {
+            font-size: 18px;
+            color: #444;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* 반응형 디자인 */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none; /* 기존 메뉴 숨김 */
+            }
+            .hamburger {
+                display: block; /* 햄버거 버튼 보이기 */
+                font-size: 28px; /* 크기 조정 */
+            }
+            .menu-bar {
+               height: 60px; /* 모바일에서는 더 작게 */
+            }
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+            }
+            .department-name {
+                height: 40px; /* 모바일에서는 학과명 이미지 크기 축소 */
+            }
+            .logo {
+            height: 40px;
+            padding-left: 10px;
+            }
+            .logo-container {
+            gap: 10px; /* 로고와 학과명 사이 간격 */
+            }
+            .body-content {
+            padding-top: 60px;
+            }
+            .professor-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .professor-photo {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .about-text {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu-bar">
+                
+            <!-- 로고 + 학과명 -->
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="images/school_logo.png" alt="School Logo" class="logo">
+                </a>
+                <img src="images/department_name.png" alt="Department Name" class="department-name">
+            </div>
+    
+            <!-- 햄버거 버튼 -->
+            <button class="hamburger" onclick="toggleMenu()">☰</button>
+            
+            <nav>
+                    <ul>
+                        <li><a href="about.html">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="laboratory.html">Laboratory</a></li>
+                        <li><a href="professor.html">Professor</a></li>
+                        <li><a href="students.html">Students</a></li>
+                        <li><a href="publication.html">Publication</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+    
+                <!-- 모바일 전용 메뉴 -->
+                <ul class="mobile-menu">
+                    <li><a href="about.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="laboratory.html">Laboratory</a></li>
+                    <li><a href="professor.html">Professor</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="publication.html">Publication</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>           
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 교수 소개 -->
+        <div class="body-content">
+        <section class="professor-section">
+            <img src="images/professor.jpg" alt="Professor Photo" class="professor-photo">
+            <div class="about-text">
+                <h1>Dr. HJ</h1>
+                <h3>Professor of Materials Science</h3>
+                <p>Email: johndoe@university.edu</p>
+                <p>Office: Room 305, Materials Science Building</p>
+            </div>
+        </section>
+
+        <!-- 연구 관심사 -->
+        <section class="section">
+            <h2>Research Interests</h2>
+            <ul class="research-list">
+                <li>Corrosion Engineering and Protection</li>
+                <li>Hydrogen Embrittlement of Alloys</li>
+                <li>Environmental Durability of Metals</li>
+                <li>Advanced Coatings for Corrosion Resistance</li>
+            </ul>
+        </section>
+
+        <!-- 주요 논문 및 업적 -->
+        <section class="section">
+            <h2>Publications & Achievements</h2>
+            <ul class="publications-list">
+                <li>Doe, J. et al. (2023). "Advances in Corrosion Resistance Coatings for Metals." Journal of Materials Science.</li>
+                <li>Doe, J. et al. (2021). "Hydrogen Embrittlement in High-Strength Steels." Metallurgical Transactions.</li>
+                <li>Doe, J. et al. (2020). "New Insights into Environmental Durability of Titanium Alloys." Corrosion Science.</li>
+            </ul>
+        </section>
+
+        <!-- 연락처 -->
+        <section class="section">
+            <h2>Publications & Achievements</h2>
+            <ul class="publications-list">
+                <li>Doe, J. et al. (2023). "Advances in Corrosion Resistance Coatings for Metals." Journal of Materials Science.</li>
+                <li>Doe, J. et al. (2021). "Hydrogen Embrittlement in High-Strength Steels." Metallurgical Transactions.</li>
+                <li>Doe, J. et al. (2020). "New Insights into Environmental Durability of Titanium Alloys." Corrosion Science.</li>
+            </ul>
+        </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Department of Materials Science. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
