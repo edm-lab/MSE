@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <title>Students - Department of Materials Science</title>
+    <title>Publications - Department of Materials Science</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -56,7 +56,7 @@
             border-radius: 5px;
         }
         .body-content {
-            padding-top: 80px;
+            padding-top: 120px;
         }
         .btn {
             display: inline-block;
@@ -137,56 +137,42 @@
             text-align: center;
         }
 
-        /* 학생 그룹 섹션 */
-        .students-section {
-            text-align: center;
-            margin: 40px 0;
+        /* 그룹 섹션 */
+        .publications-section {
+            text-align: left;
+            background: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .students-section h2 {
+        .publications-section h2 {
             font-size: 28px;
             color: #333;
+            border-bottom: 3px solid #ff9800;
+            padding-bottom: 5px;
             margin-bottom: 20px;
         }
 
-        /* 학생 카드 레이아웃 (한 줄에 2명) */
-        .students-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+        /* 연도별 논문 리스트 */
+        .year-group {
             margin-top: 20px;
         }
-
-        .student-card {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: left;
-            display: flex;
-            align-items: center;
+        .year-group h3 {
+            font-size: 22px;
+            color: #444;
+            border-left: 5px solid #ff9800;
+            padding-left: 10px;
         }
-
-        .student-card img {
-            width: 150px;
-            height: 200px;
-            object-fit: cover;
-            border: 3px solid #ff9800;
-            margin-right: 15px;
+        .publication-list {
+            list-style: none;
+            padding: 0;
         }
-
-        .student-info {
-            flex: 1;
-        }
-
-        .student-info h3 {
-            font-size: 20px;
-            margin: 0;
-        }
-
-        .student-info p {
-            font-size: 16px;
-            color: #777;
-            margin-top: 5px;
+        .publication-list li {
+            font-size: 18px;
+            color: #555;
+            padding: 8px 0;
+            border-bottom: 1px solid #ddd;
         }
 
         /* 반응형 디자인 */
@@ -217,17 +203,6 @@
             }
             .body-content {
             padding-top: 60px;
-            }
-            .students-grid {
-                grid-template-columns: repeat(1, 1fr); /* 모바일에서는 1명씩 배치 */
-            }
-            .student-card {
-                flex-direction: column;
-                text-align: center;
-            }
-            .student-card img {
-                margin-bottom: 10px;
-                margin-right: 0;
             }
         }
     </style>
@@ -273,69 +248,63 @@
                 </ul>           
         </div>
     </header>
-
     <main class="container">
         <div class="body-content">
-        <!-- Full-time Students -->
-        <section class="students-section">
-            <h2>Full-time Students</h2>
-            <div class="students-grid">
-                <div class="student-card">
-                    <img src="images/fulltime1.jpg" alt="Student 1">
-                    <div class="student-info">
-                        <h3>Alice Kim</h3>
-                        <p>Research on hydrogen embrittlement.</p>
-                    </div>
-                </div>
-                <div class="student-card">
-                    <img src="images/fulltime2.jpg" alt="Student 2">
-                    <div class="student-info">
-                        <h3>Michael Lee</h3>
-                        <p>Focuses on advanced metallic coatings.</p>
-                    </div>
-                </div>
+        <!-- International Journal -->
+        <section class="publications-section">
+            <h2>International Journal</h2>
+            
+            <div class="year-group">
+                <h3>2023</h3>
+                <ul class="publication-list">
+                    <li>Doe, J. et al. "Advances in Corrosion Resistance Coatings for Metals." Journal of Materials Science.</li>
+                    <li>Smith, A. et al. "Nanomaterials for Hydrogen Embrittlement Prevention." Advanced Engineering Materials.</li>
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <h3>2022</h3>
+                <ul class="publication-list">
+                    <li>Brown, R. et al. "New Insights into Titanium Alloy Durability." Corrosion Science.</li>
+                </ul>
             </div>
         </section>
 
-        <!-- Part-time Students -->
-        <section class="students-section">
-            <h2>Part-time Students</h2>
-            <div class="students-grid">
-                <div class="student-card">
-                    <img src="images/parttime1.jpg" alt="Student 3">
-                    <div class="student-info">
-                        <h3>Emma Lee</h3>
-                        <p>Specializing in surface coatings.</p>
-                    </div>
-                </div>
-                <div class="student-card">
-                    <img src="images/parttime2.jpg" alt="Student 4">
-                    <div class="student-info">
-                        <h3>John Kim</h3>
-                        <p>Research on material fatigue.</p>
-                    </div>
-                </div>
+        <!-- Domestic Journal -->
+        <section class="publications-section">
+            <h2>Domestic Journal</h2>
+            
+            <div class="year-group">
+                <h3>2023</h3>
+                <ul class="publication-list">
+                    <li>Kim, S. et al. "Development of High-Strength Steel Coatings." Korean Journal of Materials Research.</li>
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <h3>2021</h3>
+                <ul class="publication-list">
+                    <li>Lee, H. et al. "Study on Corrosion Behavior in Marine Environments." Korean Corrosion Society.</li>
+                </ul>
             </div>
         </section>
 
-        <!-- Alumni -->
-        <section class="students-section">
-            <h2>Alumni</h2>
-            <div class="students-grid">
-                <div class="student-card">
-                    <img src="images/alumni1.jpg" alt="Student 5">
-                    <div class="student-info">
-                        <h3>William Cho</h3>
-                        <p>Now at XYZ Research Institute.</p>
-                    </div>
-                </div>
-                <div class="student-card">
-                    <img src="images/alumni2.jpg" alt="Student 6">
-                    <div class="student-info">
-                        <h3>Jessica Han</h3>
-                        <p>Working in advanced metallurgy.</p>
-                    </div>
-                </div>
+        <!-- Patents -->
+        <section class="publications-section">
+            <h2>Patents</h2>
+            
+            <div class="year-group">
+                <h3>2023</h3>
+                <ul class="publication-list">
+                    <li>Doe, J. et al. "Corrosion-Resistant Metal Coating Process." US Patent 1234567.</li>
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <h3>2020</h3>
+                <ul class="publication-list">
+                    <li>Smith, A. et al. "Novel Hydrogen-Absorbing Alloy." US Patent 7654321.</li>
+                </ul>
             </div>
         </section>
     </div>
