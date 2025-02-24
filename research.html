@@ -201,6 +201,45 @@
             flex-direction: row-reverse;
         }
 
+        /* 프로젝트 리스트 */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* 개별 프로젝트 카드 */
+        .project-card {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+
+        /* 썸네일 이미지 */
+        .project-card img {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+            object-fit: contain; /* 비율 유지하며 빈 공간 허용 */
+            border-radius: 5px;
+            background: #f0f0f0; /* 여백이 있는 경우 배경색 추가 */
+        }
+
+        /* 프로젝트 설명 */
+        .project-card p {
+            font-size: 18px;
+            color: #333;
+            margin: 0;
+        }
+
         /* 반응형 디자인 */
         @media screen and (max-width: 768px) {
             nav ul {
@@ -241,6 +280,22 @@
                 width: 100%;
                 text-align: center;
                 padding: 0;
+            }
+            .project-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            
+            .project-card img {
+                width: 80px; /* 모바일에서는 썸네일 크기 증가 */
+                height: 80px;
+                margin-bottom: 10px;
+                margin-right: 0;
+            }
+            
+            .project-card p {
+                font-size: 16px;
             }
     </style>
 </head>
@@ -293,6 +348,7 @@
             <button class="tab active" onclick="showSector(0)">Sector 1</button>
             <button class="tab" onclick="showSector(1)">Sector 2</button>
             <button class="tab" onclick="showSector(2)">Sector 3</button>
+            <button class="tab" onclick="showSector(3)">Research Projects</button> <!-- 추가된 탭 -->
         </div>
 
         <!-- 연구 내용 -->
@@ -346,6 +402,55 @@
                 </div>
             </section>
         </div>
+
+        <!-- Research Projects 섹션 -->
+        <div id="research-projects" class="research-content">
+        
+            <h2>On-going Projects</h2> <!-- 제목을 먼저 배치 -->
+            <div class="project-list">
+                <div class="project-card">
+                    <img src="images/project.png" alt="Project 1 Thumbnail">
+                    <p>Development of next-gen corrosion-resistant coatings</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/project.png" alt="Project 2 Thumbnail">
+                    <p>Hydrogen embrittlement prevention in high-strength alloys</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/project.png" alt="Project 3 Thumbnail">
+                    <p>Sustainable materials for clean energy applications</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/project.png" alt="Project 4 Thumbnail">
+                    <p>Advanced analysis of material degradation</p>
+                </div>
+            </div>
+
+
+
+            <h2>Finished Projects</h2> <!-- Finished Projects 제목도 상단으로 이동 -->
+            <div class="project-list">
+                <div class="project-card">
+                    <img src="images/project.png" alt="Project A Thumbnail">
+                    <p>High-performance anti-corrosion materials</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/project.png" alt="Project B Thumbnail">
+                    <p>Investigation of environmental durability in metals</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/project.png" alt="Project C Thumbnail">
+                    <p>Nanomaterials for enhanced mechanical properties</p>
+                </div>
+                <div class="project-card">
+                    <img src="images/project.png" alt="Project D Thumbnail">
+                    <p>Development of high-efficiency fuel cell materials</p>
+                </div>
+            </div>
+      
+        </div>
+
+
     </div>
     </main>
 
