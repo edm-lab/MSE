@@ -1,80 +1,412 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>홈페이지 개선 중 - EDM Lab</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>About - Department of Materials Science</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             margin: 0;
             font-family: 'Montserrat', sans-serif;
-            background: #cecaca; /* 배경색을 라이트 그레이로 변경 */
-            color: #333;
-            text-align: center;
+            background-color: #f4f4f4;
+        }
+        .logo-container {
             display: flex;
-            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
-            padding: 20px;
+            gap: 30px; /* 로고와 학과명 사이 간격 */
         }
-
-        h1 {
-            font-size: 40px;
-            margin-bottom: 10px;
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards;
-        }
-        h4 {
-            opacity: 0;
-            animation: fadeIn 1.5s ease-in-out forwards;
-        }
-
-        p {
-            font-size: 20px;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out forwards;
-        }
-
         .logo {
-            width: 150px;
-            height: auto;
+            height: 100px;
+            margin-right: 20px;
+            padding-left: 80px;
+        }
+        .department-name {
+            height: 100px;
+        }
+        nav {
+            background: #333;
+            padding: 15px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-right: 80px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            font-family: 'Oswald', sans-serif;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 700;
+            padding: 10px 15px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+        nav ul li a:hover {
+            background: #555;
+            border-radius: 5px;
+        }
+        .body-content {
+            padding-top: 120px;
+        }
+        .btn {
+            display: inline-block;
+            background: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #e68900;
+        }
+        footer {
+            background: #333;
+            color: white;
+            padding: 10px;
+            margin-top: 20px;
+        }
+        .menu-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            z-index: 1000;
+        }
+        .active {
+            opacity: 1;
+        }
+        /* 햄버거 메뉴 스타일 */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            color: white;
+            background: none;
+            border: none;
+        }
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            background: #333;
+            width: 100%;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            padding: 10px 0;
+        }
+        .mobile-menu li {
+            padding: 10px;
+        }
+        .mobile-menu li a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            display: block;
+            padding: 10px 0;
+        }
+        .mobile-menu li a:hover {
+            background: #555;
+        }
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            text-align: center;
+        }
+        .section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            font-size: 32px;
+            color: #333;
             margin-bottom: 20px;
-            animation: fadeIn 2s ease-in-out forwards;
+        }
+        .section p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.6;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* 슬라이드 섹션 */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slide img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .faculty {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .faculty-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .faculty-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .faculty-card h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .faculty-card p {
+            font-size: 16px;
+            color: #777;
         }
 
-        /* 📌 반응형 디자인 (모바일 최적화) */
+        /* 썸네일 */
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .thumbnail {
+            width: 60px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+            opacity: 0.5;
+            transition: opacity 0.3s ease-in-out;
+        }
+        .thumbnail.active {
+            opacity: 1;
+            border: 2px solid #ff9800;
+        }
+
+        /* 반응형 디자인 */
         @media screen and (max-width: 768px) {
-            h1 {
-                font-size: 28px; /* 모바일에서는 폰트 크기 줄이기 */
+            nav ul {
+                display: none; /* 기존 메뉴 숨김 */
             }
-
-            p {
-                font-size: 16px;
+            .hamburger {
+                display: block; /* 햄버거 버튼 보이기 */
+                font-size: 28px; /* 크기 조정 */
             }
-
+            .menu-bar {
+               height: 60px; /* 모바일에서는 더 작게 */
+            }
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+            }
+            .department-name {
+                height: 40px; /* 모바일에서는 학과명 이미지 크기 축소 */
+            }
             .logo {
-                width: 100px; /* 모바일에서 로고 크기 줄이기 */
+            height: 40px;
+            padding-left: 10px;
             }
-        }
+            .logo-container {
+            gap: 10px; /* 로고와 학과명 사이 간격 */
+            }
+            .body-content {
+            padding-top: 60px;
+            }
+            .section {
+                padding: 20px;
+            }
+            .thumbnail {
+                width: 50px;
+                height: 30px;
+            }
     </style>
 </head>
 <body>
+    <header>
+    <div class="menu-bar">
+            
+        <!-- 로고 + 학과명 -->
+        <div class="logo-container">
+            <a href="index.html">
+                <img src="images/school_logo.png" alt="School Logo" class="logo">
+            </a>
+            <img src="images/department_name.png" alt="Department Name" class="department-name">
+        </div>
 
-    <!-- 연구실 로고 -->
-    <img class="logo" src="images/EDMlogo.png" alt="EDM Lab Logo">
+        <!-- 햄버거 버튼 -->
+        <button class="hamburger" onclick="toggleMenu()">☰</button>
+        
+        <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="laboratory.html">Laboratory</a></li>
+                    <li><a href="professor.html">Professor</a></li>
+                    <li><a href="students.html">Students</a></li>
+                    <li><a href="publication.html">Publication</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
 
-    <!-- 연구실 정보 및 메시지 -->
-    <h1>환경 내구 금속 연구실</h1>
-    <h4>Environmental Durability Metallic material Laboratory</h4>
-    <h1>김혜진 교수</h1>
-    <p>홈페이지 개선 중입니다.<br>See you soon!</p>
+            <!-- 모바일 전용 메뉴 -->
+            <ul class="mobile-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="laboratory.html">Laboratory</a></li>
+                <li><a href="professor.html">Professor</a></li>
+                <li><a href="students.html">Students</a></li>
+                <li><a href="publication.html">Publication</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>           
+    </div>
+    </header>
 
+    <main class="container">
+        <div class="body-content">
+        <!-- 학과 개요 -->
+        <section class="section">
+            <h2>Welcome to the Department of Materials Science</h2>
+            <p>Our department is dedicated to advancing research and education in the field of materials science and engineering, focusing on innovative solutions for modern technology.</p>
+        </section>
+
+        <!-- 이미지 슬라이드 섹션 -->
+        <section class="section">
+            <h2>Our Research & Innovations</h2>
+            <div class="slider-container">
+                <div class="slides">
+                    <div class="slide"><img src="images/slide1.jpg" alt="Slide 1"></div>
+                    <div class="slide"><img src="images/slide2.jpg" alt="Slide 2"></div>
+                    <div class="slide"><img src="images/slide3.jpg" alt="Slide 3"></div>
+                    <div class="slide"><img src="images/slide4.jpg" alt="Slide 4"></div>
+                    <div class="slide"><img src="images/slide5.jpg" alt="Slide 5"></div>
+                </div>
+            </div>
+            <div class="thumbnails">
+                <img src="images/slide1.jpg" class="thumbnail active" onclick="showSlide(0)">
+                <img src="images/slide2.jpg" class="thumbnail" onclick="showSlide(1)">
+                <img src="images/slide3.jpg" class="thumbnail" onclick="showSlide(2)">
+                <img src="images/slide4.jpg" class="thumbnail" onclick="showSlide(3)">
+                <img src="images/slide5.jpg" class="thumbnail" onclick="showSlide(4)">
+            </div>
+        </section>
+
+        <!-- 연구 및 교육 -->
+        <section class="section">
+            <h2>Research & Education</h2>
+            <p>We conduct cutting-edge research in materials engineering, including corrosion science, hydrogen energy materials, and advanced metallic systems.</p>
+        </section>
+
+        <!-- 교수진 소개 -->
+        <section class="section">
+            <h2>Our Faculty Members</h2>
+            <div class="faculty">
+                <div class="faculty-card">
+                    <img src="images/professor1.jpg" alt="Professor">
+                    <h3>Dr. John Doe</h3>
+                    <p>Professor of Materials Science</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="images/professor2.jpg" alt="Professor">
+                    <h3>Dr. Jane Smith</h3>
+                    <p>Assistant Professor</p>
+                </div>
+                <div class="faculty-card">
+                    <img src="images/professor3.jpg" alt="Professor">
+                    <h3>Dr. Robert Brown</h3>
+                    <p>Associate Professor</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Department of Materials Science. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const thumbnails = document.querySelectorAll('.thumbnail');
+
+        function showSlide(index) {
+            slideIndex = index;
+            const offset = -index * 100;
+            document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('active', i === index);
+            });
+        }
+
+        function autoSlide() {
+            slideIndex = (slideIndex + 1) % slides.length;
+            showSlide(slideIndex);
+        }
+
+        let slideInterval = setInterval(autoSlide, 5000);
+
+        thumbnails.forEach((thumb, index) => {
+            thumb.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(index);
+                slideInterval = setInterval(autoSlide, 5000);
+            });
+        });
+
+        showSlide(slideIndex);
+    </script>
+
+    <script>
+        function toggleMenu() {
+            const mobileMenu = document.querySelector('.mobile-menu');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+    </script>
 </body>
 </html>
