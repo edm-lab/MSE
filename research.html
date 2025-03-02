@@ -189,6 +189,8 @@
             border-radius: 10px;
             max-width: 100%;
             height: auto;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
         .image-row {
             display: flex;
@@ -199,6 +201,8 @@
         .image-row img {
             width: 80%;
             border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
         }
         .image-caption {
             font-size: 16px;
@@ -249,6 +253,35 @@
             color: #333;
             margin: 0;
         }
+        /* 라이트박스 (이미지 클릭 시 확대) */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+        .lightbox.active {
+            display: flex;
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
 
         /* 반응형 디자인 */
         @media screen and (max-width: 768px) {
@@ -285,6 +318,9 @@
             }
             .research-section img {
                 width: 80%;
+            }
+            .image-row div {
+                width: 100%;
             }
             .project-card {
                 flex-direction: column;
@@ -366,11 +402,11 @@
                 <p>3세대 QP(Quenching & Partitioning) 강에서 TRIP(Transformation Induced Plasticity) 현상과 변형 미세조직이 수소취성에 미치는 영향을 연구합니다. TRIP 효과를 통한 연성과 강도의 조절을 연구하며, 변형 전후의 미세조직 변화와 수소 트랩 증가가 연신율 감소 및 취성에 미치는 영향성을 규명함으로써, 고강도강의 수소취성 저항성을 향상시키기 위한 미세조직 최적화 전략을 제시합니다</p>
                 <div class="image-row">
                     <div>
-                        <img src="images/sector1-1.jpg" alt="Sector 1 - Image 1">
+                        <img src="images/sector1-1.jpg" alt="Sector 1 - Image 1" onclick="openLightbox('images/sector1-1.jpg')">
                         <div class="image-caption">[3세대 QP 강에서의 TRIP 현상과 변형 미세조직 연구]</div>
                     </div>
                     <div>
-                        <img src="images/sector1-2.jpg" alt="Sector 1 - Image 2">
+                        <img src="images/sector1-2.jpg" alt="Sector 1 - Image 2" onclick="openLightbox('images/sector1-2.jpg')">
                         <div class="image-caption">[QP 변형 미세조직에 따른 수소취성 특성 연구]</div>
                     </div>
                 </div>
@@ -380,11 +416,11 @@
                 <p>Al-Si 핫스탬핑 강 등 수소 지연파괴 거동과 미세조직 최적화를 통한 저감 방안 기술 확립을 수행합니다. 코팅 종류에 따른 표면에서 수소 유입 특성을 연구합니다. 또한, 소재 성능 측면에서 나노 석출물이 수소 트랩 역할이 가능하며, 또한 결정립크기를 미세화를 통해 수소취성 민감도를 낮출 수 있는 방안 등 개선 솔루션 도출 연구를 수행하고 있습니다.</p>
                 <div class="image-row">
                     <div>
-                        <img src="images/sector1-3.jpg" alt="Sector 1 - Image 3">
+                        <img src="images/sector1-3.jpg" alt="Sector 1 - Image 3" onclick="openLightbox('images/sector1-3.jpg')">
                         <div class="image-caption">[Al-SI 핫스탬핑 초고강도 부품에서의 수소 지연 파괴 특성]</div>
                     </div>
                     <div>
-                        <img src="images/sector1-4.jpg" alt="Sector 1 - Image 4">
+                        <img src="images/sector1-4.jpg" alt="Sector 1 - Image 4" onclick="openLightbox('images/sector1-4.jpg')">
                         <div class="image-caption">[지연파괴 성능 향상을 위한 미세조직 솔루션 및 성능 향상 연구]</div>
                     </div>
                 </div>
@@ -393,7 +429,7 @@
                 <h2>금속 분리판 소재의 결정 구조에 따른 수소 투과 및 확산 특성 연구</h2>
                 <p>이 연구는 금속 분리판의 결정 구조(BCC, HCP)에 따른 수소 투과 및 확산 거동을 분석합니다. SUS470(BCC)과 Ti 합금(HCP)의 EBSD 분석을 통해 미세조직 차이를 평가하고, 수소 투과 저항성 실험을 수행합니다. 또한, 코팅 기술 적용이 수소 투과 저감에 효과적임을 확인하며, 금속 분리판의 내수소 투과 성능 향상을 위한 최적 설계 방향을 제시하는 연구를 수행하고 있습니다.</p>
                 <div class="image-container">
-                    <img src="images/sector1-5.jpg" alt="Sector 1 - Image 5">
+                    <img src="images/sector1-5.jpg" alt="Sector 1 - Image 5" onclick="openLightbox('images/sector1-5.jpg')">
                     <div class="image-caption">[금속 분리판에서의  특성에 따른 수소 투과도 및 확산 특성 연구]</div>
                 </div>
             </section>
@@ -405,11 +441,11 @@
                 <p>자동차 적용 모사 부품의 부식 환경에서의 균열 발생과 파괴 거동에 대해 연구합니다. Cl⁻ 이온이 포함된 환경에서 부식이 촉진되며 균열 발생과 취성 파괴가 증가하는 것에 대한 현상학적으로 접근합니다. 이를 통해 NaCl 및 HCl 환경에서의 응력 부식 균열 가속 요인을 도출하고 환경적 영향에 따른 내구성 평가 방법을 제시합니다.</p>
                 <div class="image-row">
                     <div>
-                        <img src="images/sector2-1.jpg" alt="Sector 2 - Image 1">
+                        <img src="images/sector2-1.jpg" alt="Sector 2 - Image 1" onclick="openLightbox('images/sector2-1.jpg')">
                         <div class="image-caption">[자동차 적용 모사 부품의 부식 환경에서의 평가 결과]</div>
                     </div>
                     <div>
-                        <img src="images/sector2-2.jpg" alt="Sector 2 - Image 2">
+                        <img src="images/sector2-2.jpg" alt="Sector 2 - Image 2" onclick="openLightbox('images/sector2-2.jpg')">
                         <div class="image-caption">[부식에 따른 응력부식균열 성능 비교 : 환경 가속 요인 도출 연구]</div>
                     </div>
                 </div>
@@ -418,7 +454,7 @@
                 <h2>금속재료 용접 및 접합부에서의 부식 거동 분석</h2>
                 <p>이 연구는 고망간 TWIP 강의 마찰교반용접(FSW) 접합부에서 발생하는 부식 거동에 대하여 전기화학적 기법을 활용하여 평가합니다. 이를 통해 용접부의 다양한 미세조직과 부식 저항성과의 상관관계를 규명하여 접합부에서의 부식 솔루션 도출 연구를 수행하고 있습니다.</p>
                 <div class="image-container">
-                    <img src="images/sector2-3.jpg" alt="Sector 2 - Image 3">
+                    <img src="images/sector2-3.jpg" alt="Sector 2 - Image 3" onclick="openLightbox('images/sector2-3.jpg')">
                     <div class="image-caption">[고망간 TWIP 강에서 마찰교반용접 (FSW) 접합부의 부식 저항성 및 메커니즘 연구]</div>
                 </div>
             </section>
@@ -476,6 +512,13 @@
     </div>
     </main>
 
+    <!-- Lightbox (이미지 확대) -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded Image">
+    </div>
+
+
     <footer>
         <p>&copy; 2025 Department of Materials Science. All rights reserved.</p>
     </footer>
@@ -492,6 +535,17 @@
             tabs.forEach((tab, i) => {
                 tab.classList.toggle('active', i === index);
             });
+        }
+    </script>
+
+    <script>
+        function openLightbox(imageSrc) {
+            document.getElementById("lightbox-img").src = imageSrc;
+            document.getElementById("lightbox").classList.add("active");
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("active");
         }
     </script>
 
