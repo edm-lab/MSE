@@ -193,17 +193,17 @@
             transition: transform 0.2s;
         }
         .image-row {
-            display: flex;
+            display: grid;
             justify-content: center;
             gap: 20px;
             margin-top: 20px;
+            grid-template-columns: repeat(2, 1fr);
         }
         .image-row img {
             width: 80%;
             border-radius: 10px;
             cursor: pointer;
             transition: transform 0.2s;
-            grid-template-columns: repeat(2, 1fr);
         }
         .image-caption {
             font-size: 16px;
@@ -320,7 +320,7 @@
             .research-section img {
                 width: 80%;
             }
-            .image-row div {
+            .image-row {
                 width: 100%;
                 grid-template-columns: repeat(1, 1fr); /* 모바일에서는 1 */
             }
