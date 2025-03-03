@@ -256,6 +256,46 @@
             max-width: 100%;
         }
         }
+
+        /* 반응형 디자인 패드*/
+        @media screen and (max-width: 1024px) {
+            nav ul {
+                display: none; /* 기존 메뉴 숨김 */
+            }
+            .hamburger {
+                display: block; /* 햄버거 버튼 보이기 */
+                font-size: 28px; /* 크기 조정 */
+            }
+            .menu-bar {
+               height: 60px; /* 모바일에서는 더 작게 */
+            }
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+            }
+            .department-name {
+                width: 400px;
+                height: 35px;
+            }
+            .logo {
+            height: 40px;
+            padding-left: 10px;
+            }
+            .logo-container {
+            gap: 10px; /* 로고와 학과명 사이 간격 */
+            }
+            .body-content {
+            padding-top: 60px;
+            }
+            .gallery {
+            grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery img {
+            width: 100%;
+            height: 100px;
+            max-width: 100%;
+        }
+        }
     </style>
 </head>
 <body>

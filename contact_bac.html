@@ -243,6 +243,53 @@
         }
 
         /* 반응형 디자인 */
+        @media screen and (max-width: 768px) {
+            nav ul {
+                display: none; /* 기존 메뉴 숨김 */
+            }
+            .hamburger {
+                display: block; /* 햄버거 버튼 보이기 */
+                font-size: 28px; /* 크기 조정 */
+            }
+            .menu-bar {
+               height: 60px; /* 모바일에서는 더 작게 */
+            }
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+            }
+            .department-name {
+                height: 40px; /* 모바일에서는 학과명 이미지 크기 축소 */
+            }
+            .logo {
+            height: 40px;
+            padding-left: 10px;
+            }
+            .logo-container {
+            gap: 10px; /* 로고와 학과명 사이 간격 */
+            }
+            .body-content {
+            padding-top: 60px;
+            }
+            .lab-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .lab-map, .lab-photo, .lab-info {
+                width: 100%;
+                margin-bottom: 20px;
+                height: 200px;
+            }
+            .lab-info h2 {
+                font-size: 20px;
+            }
+
+            .lab-info p {
+                font-size: 12px;
+            }
+        }
+
+        /* 반응형 디자인 패드*/
         @media screen and (max-width: 1024px) {
             nav ul {
                 display: none; /* 기존 메뉴 숨김 */
