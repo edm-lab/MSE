@@ -247,8 +247,8 @@
                 height: 25px;
             }
             .logo {
-            height: 40px;
-            padding-left: 10px;
+                height: 40px;
+                padding-left: 10px;
             }
             .logo-container {
             gap: 10px; /* 로고와 학과명 사이 간격 */
@@ -280,6 +280,63 @@
                 flex-direction: column; /* 모바일에서 이미지와 텍스트가 세로로 배치되도록 변경 */
                 align-items: center;
             }
+        }
+
+        /* 반응형 디자인 패드*/
+        @media screen and (max-width: 1024px) {
+            nav ul {
+                display: none; /* 기존 메뉴 숨김 */
+            }
+            .hamburger {
+                display: block; /* 햄버거 버튼 보이기 */
+                font-size: 28px; /* 크기 조정 */
+            }
+            .menu-bar {
+               height: 60px; /* 모바일에서는 더 작게 */
+            }
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+            }
+            .department-name {
+                width: 220px;
+                height: 25px;
+            }
+            .logo {
+                height: 40px;
+                padding-left: 10px;
+            }
+            .logo-container {
+            gap: 10px; /* 로고와 학과명 사이 간격 */
+            }
+            .body-content {
+            padding-top: 40px;
+            }
+            .medium-equipment-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .medium-equipment-section img {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .medium-equipment-section .text {
+                width: 100%;
+                text-align: center;
+            }
+            .main-equipment-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-equipment-section img {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .equipment-content {
+                flex-direction: column; /* 모바일에서 이미지와 텍스트가 세로로 배치되도록 변경 */
+                align-items: center;
+            }
+        }
     </style>
 </head>
 

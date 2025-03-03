@@ -330,6 +330,62 @@
             .slider-container {
                 height: 150px; /* 원하는 높이로 줄이기 */
             }
+        }
+
+        /* 반응형 디자인 패드*/
+        @media screen and (max-width: 1024px) {
+            nav ul {
+                display: none; /* 기존 메뉴 숨김 */
+            }
+            .hamburger {
+                display: block; /* 햄버거 버튼 보이기 */
+                font-size: 28px; /* 크기 조정 */
+            }
+            .menu-bar {
+               height: 60px; /* 모바일에서는 더 작게 */
+            }
+            .mobile-menu {
+                display: none;
+                flex-direction: column;
+            }
+            .department-name {
+                width: 220px;
+                height: 25px;
+            }
+            .logo {
+                height: 40px;
+                padding-left: 10px;
+            }
+            .logo-container {
+                gap: 10px; /* 로고와 학과명 사이 간격 */
+            }
+            .body-content {
+                padding-top: 60px;
+            }
+            .section {
+                padding: 20px;
+            }
+            .thumbnail {
+                width: 50px;
+                height: 30px;
+            }
+            p {
+                max-width: 90%; /* 작은 화면에서는 더 넓게 사용 */
+                padding: 0 15px; /* 여백 조정 */
+            }
+            .recruitment-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .recruitment-image-container {
+                width: 120px;
+                height: 120px;
+            }
+            .slider-container {
+                height: 150px; /* 원하는 높이로 줄이기 */
+            }
+        }
     </style>
 </head>
 <body>
