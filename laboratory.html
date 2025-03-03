@@ -142,20 +142,19 @@
         /* 전체 뷰 (대형 실험실 사진) */
         .full-view-section {
             width: 100%;
-            height: 70vh;
+            height: 550px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-            
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  
         }
         /* Full-View 이미지 크기 조정 및 중앙 정렬 */
         .full-view-section img {
-            width: 60%; /* 크기를 80%로 조정 */
-            height: 550px;
+            width: 80%; /* 크기를 80%로 조정 */
+            height: 100%;
             border-radius: 10px;
-            display: block;
+            object-fit: contain;
             margin: auto;
         }
         .full-view-section h1 {
@@ -247,7 +246,8 @@
             padding-top: 40px;
             }
             .full-view-section {
-                height: 40vh;
+                width: 100%;
+                height: 250px;  
             }
             .full-view-section img {
                 width: 90%; /* 모바일에서는 90%로 조정 */
@@ -317,48 +317,51 @@
     <main class="container">
         <div class="body-content">
         <!-- 전체 뷰 (대형 실험실 사진) -->
-        <section class="full-view-section">
-            <img src="images/lab-full-view.png" alt="Laboratory Full View">
-        </section> 
-        <section>
-            <h1>(Ongoing) Building a Laboratory</h1>
-        </section>     
-        <!-- 중간 규모 실험 설비 -->
-        <section class="medium-equipment-section">
-            <img src="images/lab-equipment1.png" alt="Medium Lab Equipment">
-            <div class="text">
-                <h2>Advanced Laboratory Equipment</h2>
-                <p>Our laboratory is equipped with cutting-edge technology to facilitate research in materials science and engineering.</p>
-            </div>
-        </section>
 
-        <!-- 소형 실험 장비 섹션 -->
-        <section class="small-equipment-section">
-            <h2>Small-Scale Experimental Equipment</h2>
-            <div class="small-equipment-grid">
-                <div class="small-equipment-card">
-                    <img src="images/EDMlogo.png" alt="Small Equipment 1">
-                    <h3>small-equipment</h3>
-                    <p>material structures.</p>
+            <section>
+                <h1>(Ongoing) Building a Laboratory</h1>
+            </section>  
+
+            <section class="full-view-section">
+                <img src="images/lab-full-view.png" alt="Laboratory Full View">
+            </section> 
+               
+            <!-- 중간 규모 실험 설비 -->
+            <section class="medium-equipment-section">
+                <img src="images/lab-equipment1.png" alt="Medium Lab Equipment">
+                <div class="text">
+                    <h2>Advanced Laboratory Equipment</h2>
+                    <p>Our laboratory is equipped with cutting-edge technology to facilitate research in materials science and engineering.</p>
                 </div>
-                <div class="small-equipment-card">
-                    <img src="images/EDMlogo.png" alt="Small Equipment 2">
-                    <h3>small-equipment</h3>
-                    <p>material structures.</p>
+            </section>
+
+            <!-- 소형 실험 장비 섹션 -->
+            <section class="small-equipment-section">
+                <h2>Small-Scale Experimental Equipment</h2>
+                <div class="small-equipment-grid">
+                    <div class="small-equipment-card">
+                        <img src="images/EDMlogo.png" alt="Small Equipment 1">
+                        <h3>small-equipment</h3>
+                        <p>material structures.</p>
+                    </div>
+                    <div class="small-equipment-card">
+                        <img src="images/EDMlogo.png" alt="Small Equipment 2">
+                        <h3>small-equipment</h3>
+                        <p>material structures.</p>
+                    </div>
+                    <div class="small-equipment-card">
+                        <img src="images/EDMlogo.png" alt="Small Equipment 3">
+                        <h3>small-equipment</h3>
+                        <p>material structures.</p>
+                    </div>
+                    <div class="small-equipment-card">
+                        <img src="images/EDMlogo.png" alt="Small Equipment 4">
+                        <h3>small-equipment</h3>
+                        <p>material structures.</p>
+                    </div>
                 </div>
-                <div class="small-equipment-card">
-                    <img src="images/EDMlogo.png" alt="Small Equipment 3">
-                    <h3>small-equipment</h3>
-                    <p>material structures.</p>
-                </div>
-                <div class="small-equipment-card">
-                    <img src="images/EDMlogo.png" alt="Small Equipment 4">
-                    <h3>small-equipment</h3>
-                    <p>material structures.</p>
-                </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
     </main>
 
     <footer>
