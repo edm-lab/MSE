@@ -140,13 +140,10 @@
         
         /* 중간 규모 실험 설비 */
         .medium-equipment-section img {
-            display: flex;
             width: 45%;
             border-radius: 10px;
         }
         .medium-equipment-section .text {
-            display: flex;
-            flex-direction: column;
             width: 50%;
             font-size: 18px;
             color: #555;
@@ -277,6 +274,10 @@
             .main-equipment-section img {
                 width: 100%;
                 margin-bottom: 20px;
+            }
+            .equipment-content {
+                flex-direction: column; /* 모바일에서 이미지와 텍스트가 세로로 배치되도록 변경 */
+                align-items: center;
             }
     </style>
 </head>
