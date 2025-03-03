@@ -138,44 +138,7 @@
             text-align: center;
         }
         
-
-        /* 전체 뷰 (대형 실험실 사진) */
-        .full-view-section {
-            width: 100%;
-            height: 550px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);  
-        }
-        /* Full-View 이미지 크기 조정 및 중앙 정렬 */
-        .full-view-section img {
-            width: 80%; /* 크기를 80%로 조정 */
-            height: 100%;
-            border-radius: 10px;
-            object-fit: contain;
-            margin: auto;
-        }
-        .full-view-section h1 {
-            font-size: 48px;
-            font-weight: 700;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 5px;
-        }
-
         /* 중간 규모 실험 설비 */
-        .medium-equipment-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: white;
-            padding: 40px;
-            margin: 10px 0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
         .medium-equipment-section img {
             width: 45%;
             border-radius: 10px;
@@ -186,6 +149,53 @@
             color: #555;
             text-align: left;
             padding: 20px;
+        }
+        .medium-equipment-header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .medium-equipment-title {
+            font-size: 28px;
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* 메인 실험 설비 */
+        .main-equipment-section img {
+            width: 35%;
+            border-radius: 10px;
+        }
+        .main-equipment-header {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .main-equipment-title {
+            font-size: 28px;
+            color: #333;
+            font-weight: 700;
+        }
+        .equipment-content-first {
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 40px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .equipment-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: white;
+            padding: 40px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         /* 실험 소형 장비 (그리드) */
@@ -245,16 +255,6 @@
             .body-content {
             padding-top: 40px;
             }
-            .full-view-section {
-                width: 100%;
-                height: 250px;  
-            }
-            .full-view-section img {
-                width: 90%; /* 모바일에서는 90%로 조정 */
-            }
-            .full-view-section h1 {
-                font-size: 32px;
-            }
             .medium-equipment-section {
                 flex-direction: column;
                 text-align: center;
@@ -266,6 +266,14 @@
             .medium-equipment-section .text {
                 width: 100%;
                 text-align: center;
+            }
+            .main-equipment-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .main-equipment-section img {
+                width: 100%;
+                margin-bottom: 20px;
             }
     </style>
 </head>
@@ -312,28 +320,34 @@
     </div>
     </header>
 
-    
+    style="text-align: center;">
 
     <main class="container">
         <div class="body-content">
-        <!-- 전체 뷰 (대형 실험실 사진) -->
-
-            <section>
-                <h1>(Ongoing) Building a Laboratory</h1>
-            </section>  
-
-            <section class="full-view-section">
-                <img src="images/lab-full-view.png" alt="Laboratory Full View">
-            </section> 
+            <!-- 중간 규모 실험 설비 -->
+            <section class="main-equipment-section">
+                <div class="main-equipment-header">
+                    <h2 class="main-equipment-title">(Ongoing) Building a Laboratory</h2>
+                </div>
+                <div class="equipment-content-first">
+                    <img src="images/lab-full-view.png" alt="Medium Lab Equipment">
+                </div>
+            </section>
                
             <!-- 중간 규모 실험 설비 -->
             <section class="medium-equipment-section">
-                <img src="images/lab-equipment1.png" alt="Medium Lab Equipment">
-                <div class="text">
-                    <h2>Advanced Laboratory Equipment</h2>
-                    <p>Our laboratory is equipped with cutting-edge technology to facilitate research in materials science and engineering.</p>
+                <div class="medium-equipment-header">
+                    <h2 class="medium-equipment-title">Middle-Scale Experimental Equipment</h2>
+                </div>
+                <div class="equipment-content">
+                    <img src="images/lab-equipment1.png" alt="Medium Lab Equipment">
+                    <div class="text">
+                        <h2>Advanced Laboratory Equipment</h2>
+                        <p>Our laboratory is equipped with cutting-edge technology to facilitate research in materials science and engineering.</p>
+                    </div>
                 </div>
             </section>
+
 
             <!-- 소형 실험 장비 섹션 -->
             <section class="small-equipment-section">
