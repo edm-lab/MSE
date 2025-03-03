@@ -24,7 +24,8 @@
             padding-left: 80px;
         }
         .department-name {
-            height: 100px;
+            width: 450px;
+            height: 35px;
         }
         nav {
             background: #333;
@@ -137,6 +138,42 @@
             text-align: center;
         }
 
+        /* 탭 메뉴 스타일 */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            background: #ddd;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .tab.active {
+            background: #ff9800;
+            color: white;
+        }
+        /* 연구 섹션 스타일 */
+        .research-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .research-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+
         /* 그룹 섹션 */
         .publications-section {
             text-align: left;
@@ -204,6 +241,10 @@
             .body-content {
             padding-top: 60px;
             }
+            .tab {
+                padding: 8px 12px;  /* 버튼 크기 축소 */
+                font-size: 14px;    /* 글자 크기 축소 */
+            }
         }
     </style>
 </head>
@@ -216,7 +257,7 @@
                 <a href="index.html">
                     <img src="images/school_logo.png" alt="School Logo" class="logo">
                 </a>
-                <img src="images/department_name.png" alt="Department Name" class="department-name">
+                <img src="images/department_name1.png" alt="Department Name" class="department-name">
             </div>
     
             <!-- 햄버거 버튼 -->
@@ -228,7 +269,7 @@
                         <li><a href="research.html">Research</a></li>
                         <li><a href="laboratory.html">Laboratory</a></li>
                         <li><a href="members.html">Members</a></li>
-                        <li><a href="class.html">Class</a></li>
+                        <!--<li><a href="class.html">Class</a></li>-->
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="news.html">News</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -241,7 +282,7 @@
                     <li><a href="research.html">Research</a></li>
                     <li><a href="laboratory.html">Laboratory</a></li>
                     <li><a href="members.html">Members</a></li>
-                    <li><a href="class.html">Class</a></li>
+                    <!--<li><a href="class.html">Class</a></li>-->
                     <li><a href="publication.html">Publication</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -250,25 +291,128 @@
     </header>
     <main class="container">
         <div class="body-content">
+
+        <div class="tabs">
+            <button class="tab active" onclick="showSector(0)">Journal</button>
+            <button class="tab" onclick="showSector(1)">Presentation</button>
+        </div>
+
         <!-- International Journal -->
+        <div id="Journal" class="research-content active">
         <section class="publications-section">
             <h2>International Journal</h2>
             
             <div class="year-group">
+                <h3>2024</h3>
+                <ul class="publication-list">
+                    <li>(29) Hansol Ko, Hye-Jin Kim, Dong-Yoon Kim, Jiyoung Yu Improving the Metal Inert Gas Welding Efficiency and Microstructural Stability in the Butt and Lap Joints of Aluminum Automotive Components Using Sc- and Zr-Enhanced Filler Wires, Metals 2025, 15(1), 1</li>
+               
+                    <li>(28) Ki Jeong Kim, Sang Yoon Song, Gunjick Lee, Hye-Jin Kim, Ho Yong Um, Joo-Sik Hyun, Seung-Pill Jung, KenHee Ryou, Pyuck-Pa Choi, Alireza Zargaran, Myoung-Gyu Lee, Seok Su Sohn, Ferrite-enabled improvement of hydrogen embrittlement through strain partitioning in quenching and partitioning steels, Materials Science and Engineering: A (2024)</li>
+     
+                    <li>(27) Kyo-Min Kwon, Hye-Jin Kim, Hidetoshi Fujii, Jin-Seob Kim, Jin-Kyung Kim, Jeong-Won Choi, Seung-Joon Lee, Comparative study on mechanism of hydrogen embrittlement of Fe-18Mn-0.6C twinning-induced plasticity (TWIP) steel subjected to friction-stir welding (FSW) and tungsten inert-gas (TIG) welding, Materials Science and Engineering: A</li>
+
+                    <li>(26) Park Hyung Kwon, Lee Jin Jong, Yoo Ji Sung, Kang Yong Joon, Seo Kang Myung, Ha Heon Young, Lee Tae Ho, Lee Chang Hoon, Jung Seung Pill, Kim Hye Jin, Study on the Hydrogen Embrittlement Characteristics of Ultra-High-Strength Steel Spot Welds, , International Journal of Hydrogen energy</li>
+
+                    <li>(25) Hyun Wook Lee, Tak Min Park, Hye-Jin Kim*, Jeongho Han*, Correlation between pre-strain and hydrogen embrittlement behavior in medium-Mn steel Accepted and in proof, Journal of Materials Science & Technology (JMST) (2024)</li>
+
+                    <li>(24) Huixing Li, ChangWook Lee, Jeffrey Venezuela, Hye-Jin Kim, Andrej Atrens, Hydrogen diffusion and hydrogen embrittlement of a 1500 MPa hot-stamped steel 22MnB5 in different austenitizing conditions, Materials Science and Engineering: A (MSEA) 897 146349 (2024)</li>
+
+                    <li>(23) Kye Jeong Park, Hye-Jin Kim, Je Youl Kong, Jea Myoung Park, Ji Young Kim, Joo-Sik Hyun, Seung Chae Yoon, Analysis of Shear Characteristics of Quenchable Boron-Alloyed Steel 22mnb5 During the Hot Mechanical Piercing Process, Metals and Materials International 30 (2024)</li>
+
+                    <li>(22) Dong-Kyu Kim, Hye-Jin Kim, Seoyoon Gong, Se-Eun Shin, Seung-Joon Lee, A comparative study on the wear behavior of dual phase (DP) steel and quenching and partitioning (QP) steel, Tribology International 21 (2024) 109445</li>
+
+                    <li>(21) Jinheung Park, Geonjin Shin, Hye-Jin Kim, Kijung Kim, Seung-Chae Yoon, Seok-Su Sohn, Myoung-Gyu Lee, A continuum scale chemo-mechanical model for multi-trap hydrogen transport in deformed polycrystalline metals, International Journal of Plasticity 173 (2024) 103890</li>
+
+                    <li>(20) Hye-Jin Kim, Shin G-J, Park J-H, Myoung-Gyu Lee*, Kijung Kim, Seung-Chae Yoon, Pre-strain and hydrogen charging effect on the plastic and fracture behavior of quenching and partitioning (Q&P) steel, Acta Materialia 263 (Jan), 119524 (2024)</li>
+
+                </ul>
+            </div>
+
+            <div class="year-group">
                 <h3>2023</h3>
                 <ul class="publication-list">
-                    <li>[49] S. Seo, A.R. Jo, H.W. Lee, S.K. Hwang, J. Han*, J. Park*, "Improving fatigue life and toughness in electron beam welded Ti–6Al–4V achieved through beta heat treatment for microstructure uniformity", J. Mater. Res. Technol., 35 (2025) 869</li>
-                    <li>Smith, A. et al. "Nanomaterials for Hydrogen Embrittlement Prevention." Advanced Engineering Materials.</li>
-                    <li>[46] H. Noh, J. Han, K.H. Ryou*, P.-P. Choi*, "Abnormal martensitic transformation and morphology induced by chemical heterogeneity in additively manufactured maraging steel", Scripta Mater., 253 (2024) 116313</li>
+                    <li>(19) Kyo-Min Kwon, Tak-Min Park, Jeongho Han, Hye-Jin Kim, Hidetoshi Fujii, Seung-Joon Lee, The effect of friction-stir welding in hydrogen embrittlement of Fe-17Mn alloy, Journal of Alloys and 967, 10 (2023) 171720</li>
                 </ul>
             </div>
 
             <div class="year-group">
                 <h3>2022</h3>
                 <ul class="publication-list">
-                    <li>Brown, R. et al. "New Insights into Titanium Alloy Durability." Corrosion Science.</li>
+                    <li>(18) Ji-Young Kim, Seung-Chae Yoon, Hye-Jin Kim, Myoung-Gyu Lee*, Enhanced Hydrogen Delayed Fracture of 1.5 GPa Hot Stamping Steel Sheet with Sheared Surface by Double Punching Method, International Journal of Precision Engineering and Manufacturing (2022)</li>
+
+                    <li>(17) Hye-Jin Kim, Myoung-Gyu Lee*, Analysis of hydrogen trapping behaviour in plastically deformed quenching and partitioning steel in relation to microstructure evolution by phase transformation, Journal of Alloys and Compounds 904(2),164018 (2022)</li>
+
                 </ul>
             </div>
+        
+
+            <div class="year-group">
+                <h3>2021</h3>
+                <ul class="publication-list">
+                    <li>(16) Hye-Jin Kim, Hyun-Yeong Jung*, Seung-Pill Jung, Ji-Hee Son, Joo-Sik Hyun, Ju-Sung Kim, Hydrogen Absorption and Desorption Behavior on Aluminum-Coated Hot-Stamped Boron Steel during Hot Press Forming and Automotive Manufacturing Processes, Materials 14(21), 6730 (2021)</li>
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <h3>2020</h3>
+                <ul class="publication-list">
+                    <li>(15) Hye-Jin Kim, Hidetoshi Fujii, Seung-Joon Lee*, Corrosion Behavior and Microstructure of Stir Zone in Fe-30Mn-3Al-3Si Twinning-Induced Plasticity Steel after Friction Stir Welding, Metals, 10, 1557 (2020)</li>
+
+                    <li>(14) Hye-Jin Kim, Myoung-Gyu Lee*, Seung-Chae Yoon, Flavien Vucko, Chang-wook Lee, Dominique Theirry, Sung-Ju Kim, Diffusible hydrogen behavior and delayed fracture of cold rolled martensitic steel in consideration of automotive manufacturing process and vehicle service environment, Journal of Materials research and technology-JMR&T, 9, 13483–13501 (2020)</li>
+
+                    <li>(13) Hye-Jin Kim, ‘Effects of prior austenite grain size on hydrogen delayed fracture of hot-stamped boron martensitic steel’, Metallurgical and Materials Transactions A, 51, 237–251 (2020)</li>
+
+                    <li>(12) Tak Min Park, Hye-Jin Kim, Ho Yong Um, Nam Hoon Goo, Jeongho Han, The possibility of enhanced hydrogen embrittlement resistance of medium-Mn steels by addition of micro-alloying elements, Materials Characterization, 165, 110386 (2020)</li>
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <h3>2019</h3>
+                <ul class="publication-list">
+                    <li>(11) Hye-Jin Kim, Hyun-Yeong Jung, Tae-Woo Kwon, Yoo-Dong Chung, “Effect of Plastic Deformation on Hydrogen Diffusion Behavior of Martensitic Steel in Hydrogen Absorption Environment”, Materials Transactions, Issue 60-8 (2019)</li>
+
+                    <li>(10) Wonseog Yang, Eunhye Hwang, Hyejin Kim, Seungho Ahn, Sungjin Kim, Homero Castaneda, A study of annealing time to surface characteristics and hydrogen embrittlement on AlSi coated 22MnB5 during hot stamping process, during hot stamping process, Surface & Coatings Technology, 378, 124911 (2019)</li>
+
+                    <li>(9) Hye-Jin Kim, Hyeong-Kwon Park, Chang-Wook Lee, Byung-Gil Yoo, Hyun-Yeong Jung, “Baking Effect on Desorption of Diffusible Hydrogen and Hydrogen Embrittlement on Hot-Stamped Boron Martensitic Steel”, Metals, Vol.9, 636, 1-14 (2019)</li>
+
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <h3>2018</h3>
+                <ul class="publication-list">
+                    <li>(8) Hye-Jin Kim, Soon-Hyeok Jeon, Won-Seog Yang, Byung-Gil Yoo, Yoo-Dong Chung, Heon-Young Ha, Hyun-Young Chung, “Effects of titanium content on hydrogen embrittlement susceptibility of hot-stamped boron steels”, Journal of alloys and compounds, Vol.735, 2067-2080 (2018)</li>
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <h3>2014</h3>
+                <ul class="publication-list">
+                
+                    <li>(7) Hye-Jin Kim, Soon-Hyeok Jeon, Soon-Tae Kim, In-Sung Lee, Yong-Soo Park, Kwang-Tae Kim, Young-Sub Kim, “Investigation of the sensitization and intergranular corrosion of tube-to-tube sheet welds of hyper duplex stainless steel using an electrochemical reactivation method, Corrosion Science, Vol.87, 60-70, (2014)</li>
+
+                    <li>(6) Hye-Jin Kim, Soon-Hyeok Jeon, Soon-Tae Kim, Yong-Soo Park, “Influence of the shielding gas composition on the passive film and erosion corrosion of tube-to-tube sheet welds of hyper duplex stainless steel”, Corrosion Science, Vol.91, 140-150 (2014)</li>
+
+                    <li>(5) Soon-Hyeok Jeon, Hye-Jin Kim, Yong-Soo Park, “Effects of inclusions on the precipitation of chi phases and intergranular corrosion resistance of hyper duplex stainless steel”, Corrosion Science, Vol.87, 1-5 (2014)</li>
+
+                    <li>(4) Soon-Hyeok Jeon, Do Haeng Hur, Hye-Jin Kim, Yong-Soo Park, “Effect of Ce addition on the precipitation of deleterious phases and the associated intergranular corrosion resistance of 27Cr–7Ni hyper duplex stainless steels”, Corrosion Science, Vol.90, 313-322 (2014)</li>
+
+                    <li>(2) Soon-Hyeok Jeon, Do Haeng Hur, Hye-Jin Kim, Yong-Soo Park, “Influence of Oxygen Content on the Inclusion Formation and Pitting Corrosion Resistance of Hyper Duplex Stainless Steels”, Materials Transactions, Vol.55, 1872-1877 (2014)</li>
+
+                    <li>(1) Soon-Hyeok Jeon, Hye-Jin Kim, Kyeong-Ho Kong, Yong-Soo Park, “Effects of Copper Addition on the Passivity and Corrosion Behavior of 27Cr-7Ni Hyper Duplex Stainless Steels in Sulfuric Acid Solution”, Materials Transactions, Vol.56, 78-84 (2014)</li>
+
+                    
+                </ul>
+            </div>
+
+            <div class="year-group">
+                <h3>2013</h3>
+                <ul class="publication-list">
+                    <li>(3) Soon-Hyeok Jeon, Il-Jeong Park, Hye-Jin KimYoung-Kook Lee, Yong-Soo Park “Effect of Cu on the precipitation of deleterious phase and the mechanical properties of 27Cr-7Ni hyper duplex stainless steels using FIB and TEM”, Materials Transactions, Vol.55, 48-55 (2013)</li>
+                </ul>
+            </div>
+
+
         </section>
 
         <!-- Domestic Journal -->
@@ -276,44 +420,182 @@
             <h2>Domestic Journal</h2>
             
             <div class="year-group">
-                <h3>2023</h3>
                 <ul class="publication-list">
-                    <li>Kim, S. et al. "Development of High-Strength Steel Coatings." Korean Journal of Materials Research.</li>
-                </ul>
-            </div>
+                    <li>(5) 김기정, 박영철, 전진화, 김혜진, 변성준, 신건진, 윤승채, 변형율 기반 연성 파단 모델을 적용한 열연 초고장력강의구멍확장 성형 한계 예측, 한국소성·가공학회지, 제33권 제6호, 2024</li>
 
-            <div class="year-group">
-                <h3>2021</h3>
-                <ul class="publication-list">
-                    <li>Lee, H. et al. "Study on Corrosion Behavior in Marine Environments." Korean Corrosion Society.</li>
+                    <li>(4) 김기정, 김혜진, 윤승채, 현주식, 신건진, 박진흥, 이명규, 마르텐사이트강의 수소취성 해석을 위한 유한요소 모델링, 한국소성 가공학회지 제 32권 제 5호 2023</li>
+
+                    <li>(3) 하헌영, 김혜진, 문준오, 이태호, 조효행, 이창근, 유병길, 양원석, “초고강도 자동차용 강의 환원정전류인가에 따른 산화 거동 변화 연구”, Corrosion science and technology (2017)</li>
+
+                    <li>(2) Hye-Jin Kim, Soon-Hyeok Jeon, Soon-Tae Kim, In-Sung Lee, Yong-Soo Park, “Influence of the nitrogen gas addition in the Ar shielding gas on the erosion-corrosion of tube-to-tube sheet welds of hyper duplex stainless steel”, Corrosion Science and Technology (2014)</li>
+
+                    <li>(1) Soon-Hyeok Jeon, Hye-Jin Kim, Kyeong-Ho Kong, Yong-Soo Park, “Influence of Annealing Temperature on Microstructure and Pitting Corrosion Behavior of the 27Cr-7Ni Hyper Duplex Stainless Steel”, Corrosion Science and Technology (2014)</li>
+
                 </ul>
             </div>
         </section>
 
-        <!-- Patents -->
-        <section class="publications-section">
-            <h2>Patents</h2>
+        
+
+        </div>
+
+        <div id="Presentation" class="research-content">
+
+        <!-- International Journal -->
+         <section class="publications-section">
+            <h2>International Presentation</h2>
             
             <div class="year-group">
-                <h3>2023</h3>
                 <ul class="publication-list">
-                    <li>Doe, J. et al. "Corrosion-Resistant Metal Coating Process." US Patent 1234567.</li>
+                    <li>(22) (Invited talk), Investigation of hydrogen-induced fracture behavior and its relation to microstructure evolution in plastically deformed advanced high-strength steel, ICHSU2024 and 2024 KIM-CSM, China, Hefei, 2024.08.23</li>
+                    <li>(21) Jae Myoung Park, Hye-Jin Kim, Investigation of cold trim in conjunction with tailored cooling method for aluminized boron steel in hot stamping process, International Deep Drawing Research Group (IDDRG 2024), March 12-15, 2024, Melbourne, Austria</li>
+                    <li>(20) Yongjae Yu, Hyejin Kim, Jaemyung Kim, Kyutae Kim, Analysis of hydrogen induced failure by hydrogen injection methods in micro-alloyed steels, International Hydrogen Conference 2023, September 17-21, 2023, Park City, Utah, USA</li>
+                    <li>(19) Hye-Jin Kim, Gun-Jin Shin, Jin-Heung Park, Myoung-Gyu Lee, Ki-Jung Kim, Seung-Chae Yoon, Ju-Sik Hyun, Effects of Pre-Existing Hydrogen to Stress Triaxiality and Damage Evolution on Ultra High Strength Steel, International Hydrogen Conference 2023, September 17-21, 2023, Park City, Utah, USA</li>
+                    <li>(18) Hyun Wook Lee, Tak Min Park, Hye-Jin Kim, Jeongho Han, The relationship between hydrogen embrittlement behavior and pre-strain level of medium-Mn steel, TMS2023, March 19-23, 2023, San Diego, California, USA</li>
+                    <li>(17) Geonjin Shin, Hyejin Kim, Chanyang Kim, Kijeong Kim, Seungchae Yoon, Myoung-Gyu Lee, A unified fracture criterion in consideration of hydrogen effect in martensitic steel sheet, TMS2023, March 19-23, 2023, San Diego, California, USA</li>
+                    <li>(16) Hye-Jin Kim, Gun-Jin Shin, Myoung-Gyu Lee, Ki-Jung Kim, Seung-Chae Yoon, Ju-Sik Hyun, Effects of Pre-Existing Hydrogen to Stress Triaxiality and Damage Evolution on Ultra High Strength Steel, Steely Hydrogen 2022, 2022, Brussels, Belgium</li>
+                    <li>(15) Hye-Jin KIM, Myoung-Gyu Lee, Jeong-Ho HAN, Seung-Pill JUNG, Hyun-Yeong JUNG, Joo-Sik Hyun, Effect of microstructure and strain characteristics on hydrogen embrittlement of Q&P steel for automotive, International Conference on Martensitic Transformation (ICOMAT2022), 2022, JeJu, Korea</li>
+                    <li>(14) Hye-Jin, Kim, Seung-Pil Jung, Jae-Youl Gong, Byung-Gill Yoo, Tae-Woo Kwon, Study of improving resistance of hydrogen delayed fracture on hot stamped boron steel with about 1800 MPa tensile strength, 6th International Conference on Steels in Cars and Trucks (SCT2022), 2022, Milan, Italy</li>
+                    <li>(13) Tak Min Park, Hye-Jin Kim, Ho Yong Um, Nam Hoon Goo, Jeongho Han, The relationship between micro-alloying and hydrogen embrittlement resistance of medium Mn steels, ASIA STEEL 2021, 2021, Gyeongju, Korea</li>
+                    <li>(12) Byung-Gil Yoo, Jewoosoo Kim, Hye Jin Kim, Seok-Hyeon Kang, Hyeong Hyeop Do, Seong Kyung Han, Jae-il Jang, Seong Ju Kim, Influence of martensitic microstructures on bendability for 1.8GPa-class ultra-high-strength hot stamped steel, ASIA STEEL 2021, 2021, Gyeongju, Korea</li>
+                    <li>(11) Hye-Jin Kim, Seung-Pill Jung, Hyun-Yeong Jung, Ju-Sik Hyun, and Myoung-Gyu Lee, Characteristics of plastic deformation to hydrogen embrittlement on quenching and partitioning (Q&P) steel, ASIA STEEL 2021, 2021, Gyeongju, Korea</li>
+                    <li>(10) Hye-Jin Kim, Ki-Jung Kim, Chan-Yang Kim, Gun-Jin Sin, Seung-Chea Yoon, Ju-Sik Hyun, Myoung-Gyu Lee, Effects of Pre-Existing Hydrogen to Stress Triaxiality and Damage Evolution on Ultra High Strength Steel, International Deep Drawing Research Group (IDDRG2021), 2021, Online Conference, Germany</li>
+                    <li>(9) Hye-Jin Kim, Myoung-Gyu Lee, Seung-Pill Jung, Hyun-Yeong Jung, Joo-Sik Hyun, Effect of microstructure and strain characteristics on hydrogen embrittlement of high strength steel for automotive, International Deep Drawing Research Group (IDDRG2020), 2020, Online Conference, Korea</li>
+                    <li>(8) Je Youl Kong, Seung Chae Yoon, Gi Hak Yim, Hye-Jin Kim, Byung-Gil Yoo, Yoo-Dong Chung, Study on the Delayed Fracture by Using the Finite Element Analysis Based on the Hydrogen Uptake Model, CHS2 2019, Lulea, Sweden</li>
+                    <li>(7) Hye-Jin KIM, Seung-Pill JUNG, Hyun-Yeong JUNG, Jin-Ho LEE, Tae-Woo KWON, Effect of microstructure and strain characteristics on hydrogen delayed cracking of high strength steel for automotive, Eurocorr 2019, 2019, Seville, Spain</li>
+                    <li>(6) Hye-Jin Kim, Won-Seog Yang, Seung-Chae Yoon, Tae-Woo Kwon, Yoo-Dong Chun, Seong-Ju Kim, Effect of microstructure on hydrogen delayed fracture of hot-stamped boron steels, 6th International Conference on Advanced Steels (ICAS2018), 2018, Jeju, Korea</li>
+                    <li>(5) Won Seog Yang, Hye-Jin Kim, Heonyoung Ha, Flavien Vucko, Man-Been Moon, Effects of Ti, Nb on hydrogen embrittlement sensitivity for automotive HPF Steel, Eurocorr2017, 2017, Prague, Czech</li>
+                    <li>(4) Hye-Jin Kim, W.S Yang, H.Y Chung, Y.D. Chung, J.M. Han, Hydrogen permeation susceptibility and behavior related to applying pre-strain on ultra-high strength steels for automotive car-body, International Hydrogen Conference, 2016, Wyoming, U.S.A</li>
+                    <li>(3) Hye-Jin Kim, W.S Yang, H.Y Jeong, Y.D. Jeong, S.J. Kim, M.B. Moon, Evaluation of Susceptibility to Hydrogen Induced Cracking of Ultra-High Strength Steel Sheets for Automobiles, EUROCORR2016, 2016, Graz, Austria</li>
+                    <li>(2) Soon-Hyeok Jeon, Hye-Jin Kim, Yong-Soo Park, Do Haeng Hur, Improvement on the General and Pitting Corrosion Resistance of the Hyper Duplex Stainless Steels by Addition of Cu and Ce, International Corrosion Conference, 2014, Jeju, Korea</li>
+                    <li>(1) Hye-Jin Kim, Soon-Hyeok Jeon, Soon-Tae Kim, In-Sung Lee, Yong-Soo Park, Investigation of the Sensitization and Intergranular Corrosion of Tube-to-Tube Sheet Welds of Hyper Duplex Stainless Steel Using an Electrochemical Reactivation Method, International Corrosion Conference, 2014, Jeju, Korea</li>
+
                 </ul>
             </div>
 
+
+        </section>
+
+        <!-- Domestic Journal -->
+        <section class="publications-section">
+            <h2>Domestic Presentation</h2>
+            
             <div class="year-group">
-                <h3>2020</h3>
                 <ul class="publication-list">
-                    <li>Smith, A. et al. "Novel Hydrogen-Absorbing Alloy." US Patent 7654321.</li>
+                    <li>(42) 박진흥, 신건진, 김혜진, 김기정, 윤승채, 정승필, 손석수, 이명, TRIP강의 변형 중 미세조직 내 수소 거동 예측을 위한 모델 개발, 대한금속ㆍ재료학회, 2024년도 춘계학술대회</li>
+
+                    <li>(41) Chang Wook Lee, Hyejin Kim, Yeonjung Hwang, Hydrogen diffusion and hydrogen embrittlement of Al-10%Si-coated hot stamping steel, 대한금속ㆍ재료학회, 2024년도 춘계학술대회</li>
+
+                    <li>(40) 고한솔, 김동윤, 김혜진, 이승환, 유지영, 5xxx 계열 알루미늄 합금의 용가재의 성분에 따른 GMA 용접 특성 평가: 용가재와 용접부 형상의 영향, 대한용접·접합학회 2023년도 추계학술발표대회</li>
+
+                    <li>(39) 박형권, 이진종, 유지성, 강용준, 서강명, 하헌영, 이태호, 이창훈, 정승필, 김혜진, 초고강도 강판의 점용접부 수소취성 특성에 관한 연구, 대한용접·접합학회 2023년도 추계학술발표대회</li>
+
+                    <li>(38) 김재명, 유용재, 김혜진, 정승필, 김규태, 수소 주입 방법에 따른 철강 소재의 수소 취화 분석, 대한금속ㆍ재료학회, 2023년도 추계학술대회</li>
+
+                    <li>(37) 권교민, 김혜진, 김진경, 이승준, Comparative study on hydrogen embrittlement behavior between friction-stir welded (FSW) and tungsten inert gas (TIG) welded Fe-18Mn-0.6C twinning-induced plasticity (TWIP) steel, 대한금속ㆍ재료학회, 2023년도 추계학술대회</li>
+
+                    <li>(36) 김기정, 송상윤, 이건직, 박진흥, 신건진, 김기정, 엄호용, 정승필, 김혜진, 이명규, 손석수, 고강도강의 미세조직에 따른 잔류 응력과 수소 취성 저항성의 상관 관계, 대한금속ㆍ재료학회, 2023년도 추계학술대회</li>
+
+                    <li>(35) Kim Dong-Kyu, Hye-Jin Kim, Seoyoon Gong, Se-Eun Shin, Seung-Joon Lee, Comparison of wear behavior and wear resistance between DP and QP steels, 대한금속ㆍ재료학회, 2023년도 추계학술대회</li>
+
+                    <li>(34) (Invited Talk) 김혜진, 정승필, 김기정, 윤승채, 정현영, 현주식, 손석수, 이명규, 미래 모빌리티용 초고강도강재의 수소취성 및 기술개발 현황, 대한금속ㆍ재료학회, 2023년도 추계학술대회, 수소경제 구현을 위한 수소 운송 및 저장 소재 심포지엄</li>
+
+                    <li>(33) 김재명, 유용재, 김혜진, 정승필, 김규태, 수소 노출 방법에 따른 철강 소재의 탄소함량별 수소 취성 분석, 대한금속ㆍ재료학회, 2023년도 춘계학술대회 (1) 김혜진, 전순혁, 김순태, 이인성, 박용수, 김광태, 김영섭, “질소 보호 가스가 하이퍼 듀플렉스 스테인리스강 밀봉용접재의 마모부식과 부동태 피막에 미치는 영향”, 2014년 한국부식방식학회 춘계학술대회 (2014.5)</li>
+
+                    <li>(32) 박형권, 이진종, 유지성, 강용준, 서강명, 하헌영, 이태호, 이창훈, 정승필, 김혜진*, 초고강도강 점용접부 수소취성 특성 연구, 대한금속ㆍ재료학회, 2023년도 춘계학술대회</li>
+
+                    <li>(31) 김기정, 송상윤, 박진흥, 신건진, 엄호용, 김기정, 정승필, 김혜진, 이명규, 손석수, 일축인장변형량에 따른 초고강도강의 변형 미세조직과 수소 취성의 상관관계, 대한금속ㆍ재료학회, 2023년도 춘계학술대회</li>
+
+                    <li>(30) 이재민, 소성민, 김혜진, 양원석*, Al-Si 도금욕에 Mg과 Sr첨가가 핫스탬핑도금재에 미세조직과 물성에 미치는 영향, 대한금속ㆍ재료학회, 2023년도 춘계학술대회</li>
+
+                    <li>(29) HyeJin Kim, Seung-Pill Jung, Jae-Youl Gong, Byung-Gill Yoo, Joo-Sik Hyun, Myoung-Gyu Lee, Study of improving resistance of hydrogen delayed fracture on hot stamped boron steel with 1800 MPa tensile strength, 대한금속ㆍ재료학회, 2023년도 춘계학술대회</li>
+
+                    <li>(28) Jeongho Han, Tak Min Park, Hyun Wook Lee, and Hye-Jin Kim*, Hydrogen embrittlement behavior of medium-Mn steels, 대한금속ㆍ재료학회, 2023년도 추계학술대회</li>
+
+                    <li>(27) *Jinheung Park, Geonjin Shin (Seoul National University), Sangyoon Song, Kijeong Kim (Korea University), Hye-Jin Kim (Seoul National University, Hyundai Steel), Kijung Kim, Seung-Pill Jeong (Hyundai Steel), Seok Su Sohn (Korea University), and Myoung-Gyu Lee (Seoul National University)**, Integrated microplasticity-transformation-hydrogen diffusion model to investigate hydrogen behavior in multiphase steel, 대한금속ㆍ재료학회, 2023년도 춘계학술대회</li>
+
+                    <li>(26) Geonjin Shin, Jinheung Park (Seoul National University), Hye-Jin Kim (Seoul National University, Hyundai Steel), Kijung Kim, Seungchae Yoon, Seung-Pill Jeong (Hyundai Steel), Chanyang Kim (Korea Institute of Materials Science), and Myoung-Gyu Lee (Seoul National University)**, A unified hydrogen-induced fracture criterion for martensitic steel sheet: finite element modeling and validation, 대한금속ㆍ재료학회, 2023년도 춘계학술대회</li>
+
+                    <li>(25) Geonjin Shin, Hyejin Kim, Chanyang Kim, Kijeong Kim, Seungchae Yoon, Myoung-Gyu Lee, A Unified Fracture Criterion for Predicting Hydrogen-Induced Fracture of Martensitic Steel Sheet, 대한금속ㆍ재료학회, 2022년도 춘계학술대회</li>
+
+                    <li>(24) 이현욱, 박탁민, 김채영, 김혜진, 한정호, 사전-변형률이 중망간강의 수소 취성 거동에 미치는 영향, 대한금속ㆍ재료학회, 2022년도 추계학술대회</li>
+
+                    <li>(23) Kyo-Min Kwon, Seung-Joon Lee, Hye-Jin Kim, Study on hydrogen embrittlement of Fe-18Mn-0.6C twinning-induced plasticity (TWIP) steel after friction-stir welding (FSW), 대한금속ㆍ재료학회, 2022년도 추계학술대회</li>
+
+                    <li>(22) Dong-Kyu Kim, Seung-Joon Lee, Se-Eun Shin, Hye-Jin Kim, Microstructure and Wear Properties of Dual Phase (DP) Steel and Quenching and Partitioning (Q&P) Steel, 대한금속ㆍ재료학회, 2022년도 추계학술대회</li>
+
+                    <li>(21) Hye-Jin Kim, Seung-Pill Jung, Je-Youl Gong, Byung-Gil Yoo, Seung-Chae Yoon, Hyun-Joo Sik, Myoung-Gyu Lee, Study on Hydrogen Transport During Hot Press Forming Procedure on Aluminium-Silicon Coated Hot Tailor Rolled Blanks with 1.5 GPa Grade Automotive Parts, 대한금속ㆍ재료학회, 2022년도 추계학술대회</li>
+
+                    <li>(20) Geonjin Shin, Chanyang Kim, Hyejin Kim, Ki-Jeong Kim, Seung-Chae Yoon, Myoung-Gyu Lee, Fracture criterion for the hydrogen-induced mechanical degradation of martensitic steel sheet, 대한금속ㆍ재료학회, 2022년도 춘계학술대회</li>
+
+                    <li>(19) Kyo-Min Kwon, Seung-Joon Lee, Jong-Hun Kim, Hye-Jin Kim, Effect of friction-stir welding on hydrogen embrittlement of Fe-17Mn alloy, 대한금속ㆍ재료학회, 2022년도 춘계학술대회</li>
+
+                    <li>(18) 권교민, 김종훈, 이승준, 김혜진, Fe-17Mn 합금의 수소취성에 마찰교반 용접이 미치는 효과, 한국열처리공학회 2021 추계학술대회</li>
+
+                    <li>(17) 유병길, 김제우수, 김혜진, 강석현, 김동용, 한성경, 김성주, Influence of martensitic microstructure on bendability for 1.8GPa class hot stamped steel, 대한금속ㆍ재료학회, 2021 추계학술대회</li>
+                    
+                    <li>(16) 정승필, 김혜진, 박진성, 김성진, 초고강도강 아연 도금 종류별 수소취성 영향 연구, 한국부식방식학회, 2021년도 추계 학술대회</li>
+
+                    <li>(15) Geonjin Shin, Chanyang Kim, Hyejin Kim, Ki-Jeong Kim, Seung-Chae Yoon, Myoung-Gyu Lee, Preliminary study on fracture modeling with hydrogen embrittlement effect in martensitic steel sheet, 대한금속ㆍ재료학회, 2021 추계학술대회</li>
+
+                    <li>(14) Hye-Jin Kim, Myoung-Gyu Lee, Seung-Pill Jung, Hyun-Yeong Jung, Joo-Sik Hyun, Characteristics of plastic deformation to hydrogen embrittlement on quenched and tempered (Q&P) steel: Part I- Relationship of microstructure and hydrogen trapping, 대한금속ㆍ재료학회, 2021년도 춘계학술대회</li>
+
+                    <li>(13) 윤대원, 정중은, 김혜진, Study on Hydrogen Embrittlement of High Strength Steel using Slow Strain Rate Tensile Test, 한국부식방식학회, 2020년도 추계 학술대회</li>
+
+                    <li>(12) Seung-Joon Lee, Hye-Jin Kim, Hidetoshi Fujii, Corrosion behavior and microstructure of stir zone in Fe-30Mn-3Al-3Si twinning-induced plasticity steel after friction stir welding, 대한금속ㆍ재료학회, 2020년도 춘계 학술대회</li>
+
+                    <li>(11) Tak Min Park, Hye-Jin Kim, Ho Young Um, Nam Hoon Goo, Jeongho Han, The hydrogen embrittlement resistance of micro-alloyed medium-Mn Steel, 대한금속ㆍ재료학회, 2020년도 춘계 학술대회</li>
+
+                    <li>(10) 김혜진, 정현영, 이진호, 정승필, 권태우, 정유동, 김성주, 이창욱, 박상천, Behavior of diffusible hydrogen and delayed fracture for automotive process and vehicle environment on cold rolled martensitic steel, 대한금속ㆍ재료학회, 2020년도 춘계 학술대회</li>
+
+                    <li>(9) 김혜진, 정현영, 권태우, 정유동, 초고강도 핫스탬핑강의 수소지연파괴성능에 미치는 미세조직 영향성, 2019년 춘계 부식학회 (2019.04.25)</li>
+
+                    <li>(8) 김혜진, 양원석, 유병길, 정유동, 김성주, 1.5 GPa급 Al-Si 핫스탬핑강의 Ti 첨가량 상향에 따른 수소지연파괴 저항성 강화 효과, 2018년도 한국금속재료학회 첨단구조재료심포지엄 (2018.9.13)</li>
+
+                    <li>(7) 양원석, 김혜진, 자동차강판 개발 동향과 수소취성 대응 솔루션 연구, 2017년 추계 부식학회 (2017.11.02)</li>
+
+                    <li>(6) 양원석, 김혜진, Ti 첨가에 따른 HPF강의 수소취성 민감성 저하효과 연구, 2017년 춘계 부식학회 (2017.06)</li>
+
+                    <li>(5) 김혜진, 양원석, 정현영, 이진호, 정유동, 한종만, 자동차용 초고강도강의 인가 응력에 따른 강재 내 수소투과거동에 관한 연구, 2016년 춘계 부식학회 (2016.05)</li>
+
+                    <li>(4) 김혜진, 양원석, 이상훈, 정현영, 박선아, 정유동, 문만빈, 자동차용 1.5 GPa급 초고강도강의 전기화학적 수소주입에 따른 수소취성 영향성에 대한 연구, 2015년 춘계 부식학회 (2015.05)</li>
+
+                    <li>(3) 김혜진, 전순혁, 김순태, 이인성, 박용수, 김광태, 김영섭, 질소 보호 가스가 하이퍼 듀플렉스 스테인리스강 밀봉용접재의 마모부식과 부동태 피막에 미치는 영향, 2014년 한국부식방식학회 춘계학술대회 (2014.5)</li>
+
+                    <li>(2) 김혜진, 전순혁, 김순태, 이인성, 박용수, 김광태, 김영섭, 하이퍼 듀플렉스 스테인리스강 밀봉용접재의 예민화와 입계 부식 연구, 2013년 한국부식방식학회 추계학술대회 (2013.11)</li>
+
+                    <li>(1) 김혜진, 전순혁, 김순태, 이인성, 박용수, 김광태, 김영섭, 보호가스가 산성 염화물 환경에서 하이퍼 듀플렉스 스테인리스강 밀봉용접재의 미세조직과 입계 부식에 미치는 영향, 2013년 한국부식방식학회 춘계학술대회 (2013.5)</li>
+
+
                 </ul>
             </div>
-        </section>
+
+
+
+
+        </div>
+
     </div>
     </main>
 
     <footer>
         <p>&copy; 2025 Department of Materials Science. All rights reserved.</p>
     </footer>
+
+    <script>
+        function showSector(index) {
+            const contents = document.querySelectorAll('.research-content');
+            const tabs = document.querySelectorAll('.tab');
+
+            contents.forEach((content, i) => {
+                content.classList.toggle('active', i === index);
+            });
+
+            tabs.forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+            });
+        }
+    </script>
 
     <script>
         function toggleMenu() {

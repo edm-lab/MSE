@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <title>Publications - Department of Materials Science</title>
+    <title>Contact - Department of Materials Science</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -138,46 +138,112 @@
             text-align: center;
         }
 
-        /* 그룹 섹션 */
-        .publications-section {
-            text-align: left;
+        /* 실험실 위치 섹션 (3단 레이아웃) */
+        .lab-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             background: white;
-            padding: 30px;
-            margin-bottom: 30px;
+            padding: 40px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .publications-section h2 {
-            font-size: 28px;
-            color: #333;
-            border-bottom: 3px solid #ff9800;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
+            text-align: left;
         }
 
-        /* 연도별 논문 리스트 */
-        .year-group {
-            margin-top: 20px;
+        /* Google Maps & 연구실 사진 스타일 */
+        .lab-map, .lab-photo {
+            width: 30%;
+            height: 350px;
+            border-radius: 10px;
+            border: 2px solid #ccc;  /* 사각형 테두리 추가 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer; /* 마우스 포인터 변경 */
         }
-        .year-group h3 {
-            font-size: 22px;
-            color: #444;
-            border-left: 5px solid #ff9800;
-            padding-left: 10px;
+
+        /* Lightbox 스타일 */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
         }
-        .publication-list {
-            list-style: none;
-            padding: 0;
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: 10px;
         }
-        .publication-list li {
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+
+        .lab-info {
+            width: 30%;
+        }
+
+        .lab-info h2 {
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .lab-info p {
             font-size: 18px;
             color: #555;
-            padding: 8px 0;
-            border-bottom: 1px solid #ddd;
+            line-height: 1.6;
+        }
+
+        /* 신규 학생 모집 공고 */
+        .recruitment {
+            background: #ff9800;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .recruitment h2 {
+            font-size: 28px;
+        }
+        .recruitment p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .apply-button {
+            display: inline-block;
+            background: white;
+            color: #ff9800;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background 0.3s ease;
+        }
+        .apply-button:hover {
+            background: #fff5e1;
         }
 
         /* 반응형 디자인 */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 1024px) {
             nav ul {
                 display: none; /* 기존 메뉴 숨김 */
             }
@@ -205,10 +271,27 @@
             .body-content {
             padding-top: 60px;
             }
+            .lab-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .lab-map, .lab-photo, .lab-info {
+                width: 100%;
+                margin-bottom: 20px;
+                height: 200px;
+            }
+            .lab-info h2 {
+                font-size: 20px;
+            }
+
+            .lab-info p {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
+
     <header>
         <div class="menu-bar">
                 
@@ -248,69 +331,44 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>           
         </div>
-    </header>
+        </header>
+
     <main class="container">
         <div class="body-content">
-        <!-- International Journal -->
-        <section class="publications-section">
-            <h2>International Journal</h2>
             
-            <div class="year-group">
-                <h3>2023</h3>
-                <ul class="publication-list">
-                    <li>[49] S. Seo, A.R. Jo, H.W. Lee, S.K. Hwang, J. Han*, J. Park*, "Improving fatigue life and toughness in electron beam welded Ti–6Al–4V achieved through beta heat treatment for microstructure uniformity", J. Mater. Res. Technol., 35 (2025) 869</li>
-                    <li>Smith, A. et al. "Nanomaterials for Hydrogen Embrittlement Prevention." Advanced Engineering Materials.</li>
-                    <li>[46] H. Noh, J. Han, K.H. Ryou*, P.-P. Choi*, "Abnormal martensitic transformation and morphology induced by chemical heterogeneity in additively manufactured maraging steel", Scripta Mater., 253 (2024) 116313</li>
-                </ul>
+        <!-- 실험실 위치 (좌: 지도, 중: 연구실 사진, 우: 정보) -->
+        <section class="lab-section">
+            <!-- Google Maps (사각형 테두리 추가) -->
+            <iframe class="lab-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d793.0270385141488!2d126.7336680196281!3d37.33994811450263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b71006182b76d%3A0x9c34c60f68bf2da!2zROuPmQ!5e0!3m2!1sko!2skr!4v1740395562822!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- 연구실 정보 -->
+            <div class="lab-info">
+                <h2>Laboratory Location</h2>
+                <p><strong>Address:</strong> Room 305, Materials Science Building, Korea Polytechnic University</p>
+                <p><strong>Phone:</strong> +82 2-1234-5678</p>
+                <p><strong>Email:</strong> materials@kpu.ac.kr</p>
+                <p><strong>Office Hours:</strong> Mon-Fri, 9:00 AM - 5:00 PM</p>
             </div>
-
-            <div class="year-group">
-                <h3>2022</h3>
-                <ul class="publication-list">
-                    <li>Brown, R. et al. "New Insights into Titanium Alloy Durability." Corrosion Science.</li>
-                </ul>
-            </div>
+            
+            <!-- 연구실 사진 (사각형 테두리 추가) -->
+            <img class="lab-photo" src="images/lab-photo.png" alt="Laboratory Image" onclick="openLightbox('images/lab-photo.png')">
         </section>
 
-        <!-- Domestic Journal -->
-        <section class="publications-section">
-            <h2>Domestic Journal</h2>
-            
-            <div class="year-group">
-                <h3>2023</h3>
-                <ul class="publication-list">
-                    <li>Kim, S. et al. "Development of High-Strength Steel Coatings." Korean Journal of Materials Research.</li>
-                </ul>
-            </div>
 
-            <div class="year-group">
-                <h3>2021</h3>
-                <ul class="publication-list">
-                    <li>Lee, H. et al. "Study on Corrosion Behavior in Marine Environments." Korean Corrosion Society.</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Patents -->
-        <section class="publications-section">
-            <h2>Patents</h2>
-            
-            <div class="year-group">
-                <h3>2023</h3>
-                <ul class="publication-list">
-                    <li>Doe, J. et al. "Corrosion-Resistant Metal Coating Process." US Patent 1234567.</li>
-                </ul>
-            </div>
-
-            <div class="year-group">
-                <h3>2020</h3>
-                <ul class="publication-list">
-                    <li>Smith, A. et al. "Novel Hydrogen-Absorbing Alloy." US Patent 7654321.</li>
-                </ul>
-            </div>
+        <!-- 신규 학생 모집 공고 -->
+        <section class="recruitment">
+            <h2>New Student Recruitment</h2>
+            <p>We are now accepting applications for new students who are passionate about materials science and engineering.</p>
+            <p>Our department provides outstanding research opportunities and industry collaborations.</p>
+            <a href="apply.html" class="apply-button">Apply Now</a>
         </section>
     </div>
     </main>
+
+    <!-- Lightbox (사진 클릭 시 확대) -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Expanded Image">
+    </div>
 
     <footer>
         <p>&copy; 2025 Department of Materials Science. All rights reserved.</p>
@@ -322,6 +380,18 @@
             mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
         }
     </script>
+
+    <script>
+        function openLightbox(imageSrc) {
+            document.getElementById("lightbox-img").src = imageSrc;
+            document.getElementById("lightbox").classList.add("active");
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").classList.remove("active");
+        }
+    </script>
+
 
 </body>
 </html>

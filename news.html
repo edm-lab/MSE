@@ -24,7 +24,8 @@
             padding-left: 80px;
         }
         .department-name {
-            height: 100px;
+            width: 450px;
+            height: 35px;
         }
         nav {
             background: #333;
@@ -167,14 +168,14 @@
         /* 이미지 갤러리 */
         .gallery {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(3, 1fr);
             gap: 10px;
             margin-top: 15px;
         }
         .gallery img {
             width: 100%;
-            max-width: 300px;
-            height: 200px;
+            max-width: 400px;
+            height: 250px;
             object-fit: contain; /* 비율 유지하며 빈 공간 허용 */
             border-radius: 5px;
             cursor: pointer;
@@ -266,7 +267,7 @@
                 <a href="index.html">
                     <img src="images/school_logo.png" alt="School Logo" class="logo">
                 </a>
-                <img src="images/department_name.png" alt="Department Name" class="department-name">
+                <img src="images/department_name1.png" alt="Department Name" class="department-name">
             </div>
     
             <!-- 햄버거 버튼 -->
@@ -278,7 +279,7 @@
                         <li><a href="research.html">Research</a></li>
                         <li><a href="laboratory.html">Laboratory</a></li>
                         <li><a href="members.html">Members</a></li>
-                        <li><a href="class.html">Class</a></li>
+                        <!--<li><a href="class.html">Class</a></li>-->
                         <li><a href="publication.html">Publication</a></li>
                         <li><a href="news.html">News</a></li>
                         <li><a href="contact.html">Contact</a></li>
@@ -291,7 +292,7 @@
                     <li><a href="research.html">Research</a></li>
                     <li><a href="laboratory.html">Laboratory</a></li>
                     <li><a href="members.html">Members</a></li>
-                    <li><a href="class.html">Class</a></li>
+                    <!--<li><a href="class.html">Class</a></li>-->
                     <li><a href="publication.html">Publication</a></li>
                     <li><a href="news.html">News</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -303,33 +304,18 @@
         <div class="body-content">
         <!-- 뉴스 기사 1 -->
         <section class="news-article">
-            <div class="news-date">February 15, 2025</div>
-            <div class="news-title">New Research Collaboration on Hydrogen Embrittlement</div>
+            <div class="news-date">March 4, 2025</div>
+            <div class="news-title">New Semester Opening</div>
             <p class="news-content">
-                Our department has initiated a new collaboration with XYZ Research Institute to study the effects of hydrogen embrittlement in high-strength steels.
+                2025년도 수업은 아래와 같습니다. 많은 관심 부탁드립니다.
             </p>
             <div class="gallery">
-                <img src="images/news1-1.jpg" alt="News Image 1" onclick="openLightbox('images/news1-1.jpg')">
+                <img src="images/news1-1.png" alt="News Image 1" onclick="openLightbox('images/news1-1.png')">
                 <img src="images/news1-2.jpg" alt="News Image 2" onclick="openLightbox('images/news1-2.jpg')">
-                <img src="images/news1-3.jpg" alt="News Image 3" onclick="openLightbox('images/news1-3.jpg')">
-                <img src="images/news1-4.jpg" alt="News Image 3" onclick="openLightbox('images/news1-4.jpg')">
-                <img src="images/news1-5.jpg" alt="News Image 3" onclick="openLightbox('images/news1-5.jpg')">
-                <img src="images/news1-6.jpg" alt="News Image 3" onclick="openLightbox('images/news1-6.jpg')">
             </div>
         </section>
 
         <!-- 뉴스 기사 2 -->
-        <section class="news-article">
-            <div class="news-date">January 20, 2025</div>
-            <div class="news-title">Prof. John Doe Wins Excellence in Research Award</div>
-            <p class="news-content">
-                Congratulations to Prof. John Doe for receiving the Excellence in Research Award for his outstanding contributions to the field of corrosion science.
-            </p>
-            <div class="gallery">
-                <img src="images/news2-1.jpg" alt="News Image 1" onclick="openLightbox('images/news2-1.jpg')">
-                <img src="images/news2-2.jpg" alt="News Image 2" onclick="openLightbox('images/news2-2.jpg')">
-            </div>
-        </section>
     </div>
     </main>
 
